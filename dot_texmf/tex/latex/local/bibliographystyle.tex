@@ -1,0 +1,59 @@
+\DeclareDelimFormat{nameyeardelim}{\addcomma\space}
+
+%\setlength{\bibhang}{0pt}
+
+\DeclareListInputHandler{location}{%
+	\def\NewValue{}}
+
+\DeclareListInputHandler{publisher}{%
+	\def\NewValue{}}
+
+\DeclareNameAlias{sortname}{family-given}
+\renewcommand*{\labelnamepunct}{\addspace}
+
+\DeclareFieldFormat
+[article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+{title}{#1}
+
+\DeclareFieldFormat{titlecase}{\MakeSentenceCase*{#1}}
+
+\renewbibmacro*{in:}{%
+	\ifentrytype{article}
+	{\setunit{\addcomma\space}}
+	{\printtext{\bibstring{in}\intitlepunct}}}
+
+\DeclareFieldFormat{journaltitlecase}{#1}
+
+\renewbibmacro*{journal}{%
+	\ifboolexpr{
+		test {\iffieldundef{journaltitle}}
+		and
+		test {\iffieldundef{journalsubtitle}}
+	}
+	{}
+	{\printtext[journaltitle]{%
+			\printfield[journaltitlecase]{journaltitle}%
+			\setunit{\subtitlepunct}%
+			\printfield[journaltitlecase]{journalsubtitle}}}}
+
+\renewbibmacro*{volume+number+eid}{%
+	\printfield{volume}%
+	\setunit{\addcomma\space}%
+	\printfield{eid}}
+
+\DeclareFieldFormat[article,periodical]{volume}{\mkbibbold{#1}}% volume of a journal
+
+\DeclareFieldFormat{pages}{#1}
+
+\DefineBibliographyStrings{english}{
+	%  backrefpage={see p.},
+	backrefpage={},
+	%  backrefpages={see pp.}
+	backrefpages={}
+}
+\renewcommand*{\finentrypunct}{}
+\usepackage{xpatch}
+%\DeclareFieldFormat{backrefparens}{\mkbibparens{#1\addperiod}}
+\DeclareFieldFormat{backrefparens}{\addperiod\raisebox{4pt}{\scriptsize{#1}}}
+\xpatchbibmacro{pageref}{parens}{backrefparens}{}{}
+
