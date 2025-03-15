@@ -48,17 +48,14 @@
 
 \DeclareOption{12pt}{%
 	\renewcommand*\myfontsize{12pt}%
-	\renewcommand*\parentclass{article}
 }
 
 \DeclareOption{11pt}{%
 	\renewcommand*\myfontsize{11pt}%
-	\renewcommand*\parentclass{article}
 }
 
 \DeclareOption{10pt}{%
 	\renewcommand*\myfontsize{10pt}%
-	\renewcommand*\parentclass{article}
 }
 \ProcessOptions
 \LoadClass[\myfontsize, \mypagesize]{article}
