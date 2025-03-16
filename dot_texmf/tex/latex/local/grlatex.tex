@@ -1,0 +1,216 @@
+%% Documentation for grlatex.cls
+\documentclass{ltxdoc}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\title{The \textsf{grlatex} document class}
+\author{Giuseppe Ragusa}
+\date{\today}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  commentstyle=\color{gray},
+  keywordstyle=\color{blue},
+  stringstyle=\color{purple},
+  breaklines=true,
+  breakatwhitespace=true,
+  frame=single,
+  language=[LaTeX]TeX,
+  texcsstyle=*\color{blue},
+  moretexcs={RequirePackage,DeclareOption,ProcessOptions,LoadClass,newcommand,renewcommand,ifx,nameuse}
+}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+The \textsf{grlatex} class provides a specialized environment for creating academic documents based on the standard \textsf{article} class. It's designed to offer enhanced typography, customizable bibliography systems, and other features useful for academic writing.
+
+\section{Usage}
+
+To use the class, simply specify it in the \verb|\documentclass| command:
+
+\begin{lstlisting}
+\documentclass[<options>]{grlatex}
+\end{lstlisting}
+
+Where \verb|<options>| are one or more of the available options described in Section~\ref{sec:options}.
+
+\section{Class Options}
+\label{sec:options}
+
+The \textsf{grlatex} class accepts all options available to the standard \textsf{article} class, plus several additional options specific to \textsf{grlatex}.
+
+\subsection{Paper and Layout Options}
+
+These options are passed directly to the \textsf{article} class:
+
+\begin{description}
+\item[a4paper] Set the paper size to A4 (210 × 297 mm).
+\item[letterpaper] Set the paper size to US Letter (8.5 × 11 inches).
+\item[legalpaper] Set the paper size to US Legal (8.5 × 14 inches).
+\item[executivepaper] Set the paper size to Executive (7.25 × 10.5 inches).
+\item[landscape] Set the page orientation to landscape.
+\item[10pt, 11pt, 12pt] Set the base font size (default is 10pt).
+\item[oneside, twoside] Specify whether the document will be printed on one or both sides of the paper.
+\item[draft, final] In draft mode, overfull boxes are marked with a black box in the margin.
+\item[titlepage, notitlepage] Specify whether the title should be on a separate page.
+\item[openright, openany] Determine where chapters begin (relevant for book-like documents).
+\item[onecolumn, twocolumn] Format the document in one or two columns.
+\item[openbib] Use the open bibliography format.
+\end{description}
+
+\subsection{GR-Specific Options}
+
+The following options are specific to the \textsf{grlatex} class:
+
+\begin{description}
+\item[biblatex] \emph{(Default)} Use the \textsf{biblatex} package for bibliography management with the following settings:
+  \begin{itemize}
+    \item style=authoryear
+    \item backend=biber
+    \item giveninits=true
+    \item natbib=true
+    \item date=year
+    \item uniquelist=false
+    \item uniquename=init
+    \item isbn=false
+    \item maxcitenames=3
+    \item dashed=false
+    \item maxbibnames=999
+    \item doi=true
+    \item backref=true
+  \end{itemize}
+
+\item[bibtex] Use the \textsf{natbib} package with the \texttt{authoryear} and \texttt{round} options instead of \textsf{biblatex}.
+
+\item[coloredheadings] Use colored section headings.
+
+\item[plainheadings] Use plain (non-colored) section headings.
+\end{description}
+
+\section{Required Packages}
+
+The \textsf{grlatex} class automatically loads the following packages:
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Package} & \textbf{Purpose} \\
+\midrule
+fontenc (T1) & Enhanced font encoding \\
+lmodern & Latin Modern fonts \\
+amsmath & Mathematical typesetting \\
+amssymb & Mathematical symbols \\
+amsthm & Theorem environments \\
+appendix & Enhanced appendix formatting \\
+bm & Bold mathematical symbols \\
+booktabs & Enhanced table formatting \\
+biblatex/natbib & Bibliography management (depending on option) \\
+\bottomrule
+\end{tabular}
+\caption{Packages loaded by \textsf{grlatex}}
+\end{table}
+
+\section{Examples}
+
+\subsection{Basic Document}
+
+\begin{lstlisting}
+\documentclass{grlatex}
+
+\title{My Document}
+\author{Author Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This is an example document using the grlatex class.
+
+\end{document}
+\end{lstlisting}
+
+\subsection{Document with Bibliography}
+
+Using biblatex (default):
+
+\begin{lstlisting}
+\documentclass{grlatex}
+
+\title{Document with References}
+\author{Author Name}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This document cites an important paper \citep{Smith2020}.
+
+\printbibliography
+
+\end{document}
+\end{lstlisting}
+
+Using bibtex with natbib:
+
+\begin{lstlisting}
+\documentclass[bibtex]{grlatex}
+
+\title{Document with References}
+\author{Author Name}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This document cites an important paper \citep{Smith2020}.
+
+\bibliographystyle{plainnat}
+\bibliography{mybibfile}
+
+\end{document}
+\end{lstlisting}
+
+\section{Implementation Notes}
+
+The class is based on the standard \textsf{article} class and modifies it to provide enhanced functionality. The bibliography system selection is implemented as follows:
+
+\begin{lstlisting}
+\newcommand{\grlatex@bibengine}{biblatex} % Default to biblatex
+
+\DeclareOption{biblatex}{\renewcommand{\grlatex@bibengine}{biblatex}}
+\DeclareOption{bibtex}{\renewcommand{\grlatex@bibengine}{bibtex}}
+
+% Later in the code:
+\ifx\grlatex@bibengine\@nameuse{biblatex}
+  \RequirePackage[style=authoryear, ...]{biblatex}
+\else
+  \RequirePackage[authoryear,round]{natbib}
+\fi
+\end{lstlisting}
+
+\appendix
+\section{Implementation}
+
+The full implementation of the class is not shown here. Please refer to the source file \texttt{grlatex.cls} for details.
+
+\section{Version History}
+
+\begin{description}
+\item[v1.0] Initial release.
+\end{description}
+
+\end{document}
