@@ -23,8 +23,16 @@ source $ZSH/oh-my-zsh.sh
 
 
 # auto suggest
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#663399,standout"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#663399,standout"
 
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+bindkey '^I' menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
+bindkey -M menuselect              '^I'         menu-complete
+bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
+bindkey -M menuselect '^M' .accept-line
 
 # User configuration
 
@@ -44,10 +52,16 @@ setopt auto_list # automatically list choices on ambiguous completion
 setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
-zstyle ':completion:*' menu select # select completions with arrow keys
-zstyle ':completion:*' group-name '' # group results by category
-zstyle ':completion:::::' completer _expand _complete _ignored _approximate #enable approximate matches for completion
+# zstyle ':completion:*' menu select # select completions with arrow keys
+# zstyle ':completion:*' group-name '' # group results by category
+# zstyle ':completion:::::' completer _expand _complete _ignored _approximate #enable approximate matches for completion
 
+# all Tab widgets
+zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+# all history widgets
+zstyle ':autocomplete:*history*:*' insert-unambiguous yes
+# ^S
+zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
 
 export EDITOR="code --wait"
 
