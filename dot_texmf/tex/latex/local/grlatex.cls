@@ -119,7 +119,14 @@
 \RequirePackage{amsthm}
 \RequirePackage[title]{appendix}
 \RequirePackage{bm}
-\RequirePackage{booktabs}
+\RequirePackage{tabularray}
+\UseTblrLibrary{booktabs}
+\usepackage{caption}
+\captionsetup[figure]{position=bottom}
+\captionsetup[figure]{labelfont=sc}
+\captionsetup[table]{position=bottom}
+\captionsetup[table]{labelfont=sc}
+
 
 \newcommand{\setbiblatex}{
 	\RequirePackage[style=authoryear,
@@ -143,12 +150,12 @@
 }
 
 
-\RequirePackage[bf,nooneline,labelsep=period,footnotesize]{caption}
+
 \RequirePackage{centernot}
 \RequirePackage{comment}
 \RequirePackage{datetime}
 \RequirePackage{enumerate}
-\RequirePackage[capposition=top]{floatrow}
+\RequirePackage[capposition=bottom]{floatrow}
 \RequirePackage{graphicx}
 \RequirePackage{geometry}
 \RequirePackage[unicode=true,
@@ -367,6 +374,9 @@ colorlinks=true]{hyperref}
 
 \renewcommand{\vec}{\mathrm{vec}}
 
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
 % calligraphic capital letters
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}
@@ -382,6 +392,7 @@ colorlinks=true]{hyperref}
 \newcommand{\calL}{\mathcal{L}}
 \newcommand{\calM}{\mathcal{M}}
 \newcommand{\calN}{\mathcal{N}}
+
 \newcommand{\calO}{\mathcal{O}}
 \newcommand{\calP}{\mathcal{P}}
 \newcommand{\calQ}{\mathcal{Q}}
