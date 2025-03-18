@@ -112,18 +112,13 @@
 \bind "M-Down"             "math-insert \downarrow"
 
 # thick arrows
-\bind "C-s S-exclam"       "math-insert \Rightarrow"
-\bind "C-s S-numbersign"   "math-insert \Leftarrow"
-\bind "C-s S-at"           "math-insert \Uparrow"
-\bind "C-s S-dollar"       "math-insert \Downarrow"
-
 \bind "M-S-Right"          "math-insert \Rightarrow"
 \bind "M-S-Up"             "math-insert \Uparrow"
 \bind "M-S-Left"           "math-insert \Leftarrow"
 \bind "M-S-Down"           "math-insert \Downarrow"
 
 # Other arrows
-\bind "C-s C-equal"        "math-insert \Longleftrightarrow"
+\bind "M-S C-equal"        "math-insert \Longleftrightarrow"
 
 # Contain, subset, superset, union etc.
 \bind "C-s 5"              "math-insert \supseteq"
@@ -136,46 +131,28 @@
 \bind "C-s S-asterisk"     "math-insert \bigcup"
 
 # less equal etc
-\bind "S-M-less"           "math-insert \leq"
-\bind "S-M-greater"        "math-insert \geq"
-\bind "M-comma"            "math-insert \leq"
-\bind "M-period"           "math-insert \geq"
-\bind "C-s S-less"         "math-insert \ll"
-\bind "C-s S-greater"      "math-insert \gg"
-\bind "C-s comma"          "math-insert \leq"
-\bind "C-s period"         "math-insert \geq"
+\bind "M-S less"           "math-insert \leqslant"
+\bind "M-S greater"        "math-insert \geqslant"
+\bind "M-S S-less"         "math-insert \ll"
+\bind "M-S S-greater"      "math-insert \gg"
 
-# Accents
-# defined in sciword.bind
-# \bind "C-period"         "accent-dot"
-# \bind "S-C-colon"        "math-insert \ddot"
-# \bind "C-quoteleft"      "accent-grave"
-# \bind "S-C-asciitilde"   "accent-tilde"
-# \bind "S-C-quotedbl"     "accent-umlaut"
-# \bind "C-apostrophe"     "accent-acute"
-# \bind "S-C-asciicircum"  "accent-circumflex"
-# \bind "C-equal"          "accent-vector"
- 
+\bind "M-S asciicircum"    "math-insert \hat"
+\bind "M-S S-asciicircum"  "math-insert \widehat"
+
 # math accent
-\bind "S-C-asciitilde"     "math-insert \tilde"
-\bind "M-S-asciitilde"     "math-insert \widetilde"
-\bind "C-s grave"          "math-insert \grave"
-\bind "C-S-asciicircum"    "math-insert \hat"
-\bind "M-S-asciicircum"    "math-insert \widehat"
-\bind "M-S-asciicircum"    "math-insert \widehat"
-\bind "C-S-underscore"     "math-insert \bar"
+\bind "M-S asciitilde"     "math-insert \tilde"
+\bind "M-S S-asciitilde"   "math-insert \widetilde"
+\bind "M-s grave"          "math-insert \grave"
 \bind "M-S-underscore"     "math-insert \overline"
-\bind "C-S-plus"           "math-insert \vec"
-\bind "M-S-plus"           "math-insert \overrightarrow"
-\bind "C-period"           "math-insert \dot"
+\bind "M-S-period"         "math-insert \dot"
 
 # one-side Delimits, VERY USEFUL!!
-\bind "C-s S-braceleft"    "math-delim { ."
-\bind "C-s S-braceright"   "math-delim . }"
-\bind "C-s bracketleft"    "math-delim [ ."
-\bind "C-s bracketright"   "math-delim . ]"
-\bind "C-s S-parenleft"    "math-delim ( ."
-\bind "C-s S-parenright"   "math-delim . )"
+\bind "M-S S-braceleft"    "math-delim { ."
+\bind "M-S S-braceright"   "math-delim . }"
+\bind "M-S bracketleft"    "math-delim [ ."
+\bind "M-S bracketright"   "math-delim . ]"
+\bind "M-S S-parenleft"    "math-delim ( ."
+\bind "M-S S-parenright"   "math-delim . )"
 \bind "M-S-parenleft M-bracketright"    "math-delim ( ]"
 \bind "M-bracketleft M-S-parenright"    "math-delim [ )"
 \bind "M-S-parenleft M-S-parenright"    "math-delim ( )"
@@ -183,29 +160,12 @@
 \bind "M-bracketleft M-bracketright"    "math-delim [ ]"
 \bind "M-S-braceleft M-S-braceright"    "math-delim { }"
 
-\bind "C-s S-bar"          "math-delim . |"
-\bind "C-s C-S-bar"        "math-delim | ."
-\bind "C-backslash"      "math-delim Vert Vert"
 
 # This is in sciword.bind,
 # in case you do not have sciword.bind, uncomment the following
-#\bind "C-9"                "math-delim ( )"
-#\bind "S-C-parenleft"      "math-delim ( )"
-#\bind "C-0"                "math-delim ( )"
-#\bind "S-C-parenright"     "math-delim ( )"
-#\bind "C-bracketleft"      "math-delim [ ]"
-#\bind "C-bracketright"     "math-delim [ ]"
-#\bind "C-S-less"           "math-delim langle rangle"
-#\bind "C-S-greater"        "math-delim langle rangle"
-#\bind "C-S-bar"            "math-delim | |"
-#\bind "C-S-brokenbar"      "math-delim | |"
-#\bind "C-M-bar"            "math-delim | |"
-#\bind "S-C-braceleft"      "math-delim { }"
-#\bind "S-C-braceright"     "math-delim { }""
-
 # very useful, must-haves
-\bind "C-slash"            "math-insert \frac"
-\bind "C-s b"              "math-insert \binom"
+\bind "M-S slash"            "math-insert \frac"
+\bind "M-s b"                "math-insert \binom"
 
 # matrix and matrix elements
 # row add/delete
@@ -318,12 +278,10 @@
 \bind "C-s apostrophe"     "command-sequence math-superscript; math-insert \prime;"
 
 \bind "M-C-d"              "command-sequence math-mode; math-mutate align;"
-# "command-sequence math-mode; math-mutate eqnarray;"
-# "command-sequence math-mode; math-mutate align;"
 
-#\bind "C-S-D"              "command-sequence math-mode; math-mutate eqnarray;"
 \bind "C-e"                "math-insert \sum"
-\bind "C-S-E"              "command-sequence math-insert \sum; math-subscript; self-insert n; self-insert =; self-insert 0; char-forward; math-superscript; math-insert \infty; char-forward;"
+\bind "C-S-E"              "command-sequence math-insert \sum; math-subscript; self-insert i; self-insert =; self-insert 1; char-forward; math-superscript; math-insert n; char-forward;"
+\bind "C-S-T"              "command-sequence math-insert \sum; math-subscript; self-insert t; self-insert =; self-insert 1; char-forward; math-superscript; math-insert T; char-forward;"
 
 \bind "C-s equal"          "math-insert \equiv"
 \bind "M-equal"            "math-insert \approx"
@@ -331,12 +289,11 @@
 \bind "M-apostrophe"       "command-sequence math-superscrupt; math-insert \prime;"
 
 # third: a sequence of commands
-\bind "M-q x"              "command-sequence self-insert x; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert x; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert x; math-subscript; self-insert n; char-forward;"
-\bind "M-q S-X"            "command-sequence self-insert X; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert X; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert X; math-subscript; self-insert n; char-forward;"
-\bind "M-q y"              "command-sequence self-insert y; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert y; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert y; math-subscript; self-insert n; char-forward;"
-\bind "M-q S-Y"            "command-sequence self-insert Y; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert Y; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert Y; math-subscript; self-insert n; char-forward;"
-\bind "M-q a"              "command-sequence self-insert a; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert a; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert a; math-subscript; self-insert n; char-forward;"
-\bind "M-q S-A"            "command-sequence self-insert A; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert A; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert A; math-subscript; self-insert n; char-forward;"
+\bind "M-s M-x i"          "command-sequence self-insert X; math-subscript; self-insert i; char-forward;"
+\bind "M-s M-x t"          "command-sequence self-insert X; math-subscript; self-insert t; char-forward;"
+
+\bind "M-s M-Y i"          "command-sequence self-insert Y; math-subscript; self-insert i; char-forward;"
+\bind "M-s M-Y t"          "command-sequence self-insert Y; math-subscript; self-insert t; char-forward;"
 
 # maybe I have gone too far, but ... sub/super scripts!
 \bind "M-0"                "command-sequence math-subscript; self-insert 0; char-forward;"
