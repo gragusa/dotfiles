@@ -390,5 +390,8 @@
 
 \bind "C-p S"          "command-sequence math-insert \sum; math-subscript; math-insert i=1; char-right; math-superscript; math-insert n; char-right"
 \bind "C-p X"          "command-sequence math-insert X; math-subscript; math-insert i; char-right;"
-\bind "C-p Y"          "command-sequence math-insert X; math-subscript; math-insert i; char-right;"
+\bind "C-p Y"          "command-sequence math-insert Y; math-subscript; math-insert i; char-right;"
+\bind "C-p Z"          "command-sequence math-insert Z; math-subscript; math-insert i; char-right;"
+\bind "C-p C-p Z"      "command-sequence math-insert Z; math-subscript; math-insert i; char-right;math-insert Z'; math-subscript; math-insert i; char-right;"
+\bind "C-p C-p X"      "command-sequence math-insert X; math-subscript; math-insert i; char-right;math-insert X'; math-subscript; math-insert i; char-right;"
 
