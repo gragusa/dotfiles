@@ -286,7 +286,7 @@
 \bind "C-s equal"          "math-insert \equiv"
 \bind "M-equal"            "math-insert \approx"
 \bind "M-minus"            "math-insert \sim"
-\bind "M-apostrophe"       "command-sequence math-superscrupt; math-insert \prime;"
+
 
 # third: a sequence of commands
 \bind "M-s M-x i"          "command-sequence self-insert X; math-subscript; self-insert i; char-forward;"
