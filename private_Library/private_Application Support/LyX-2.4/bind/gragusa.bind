@@ -1,32 +1,4 @@
-# The following are added by Bo Peng
-# use \bind_file bpeng.bind
-# to include this file to other bind files.
-# 
-
-# $Log: lyx31_personal.bind,v $
-# Revision 1.1  2003/04/27 19:31:03  bpeng
-# lyx.3.1
-#
-# Revision 1.8  2003/03/03 20:56:53  bpeng
-# change sequence shortcuts.
-#
-# Revision 1.7  2002/12/25 17:52:57  bpeng
-# vvv
-#
-# Revision 1.6  2002/12/17 03:49:31  bpeng
-# layout proof
-#
-# Revision 1.5  2002/11/04 02:14:00  bpeng
-# some small things.
-#
-# Revision 1.4  2002/10/24 02:00:42  bpeng
-# minor change. Add ref for \Gamma.
-#
-# Revision 1.3  2002/10/21 20:48:31  bpeng
-# reference for C-S-H and C-S-L.
-#
-
-
+# The following are added by Giuseppe Ragusa
 
 # include basic math bind keys.
 # 
@@ -35,11 +7,6 @@
 # To use the system default sciword.bind
 # you need to remove
 #
-#  \bind "C-g" "math-greek"
-#  \bind "M-m o" "math-insert \oint"
-#
-# to avoid conflicts.
-#
 \bind_file sciword.bind
 \bind_file math.bind
 \bind_file latinkeys.bind
@@ -47,78 +14,64 @@
 # My bindings:
 # 
 # added May, 2005, some menu items
-\bind "C-S-V"              "primary-selection-paste"
-\bind "M-C-V"              "primary-selection-paste paragraph"
 
 #
 # First: Greek, start with C-g
-\bind "C-g a"              "math-insert \alpha"
-\bind "C-g b"              "math-insert \beta"
-\bind "C-g c"              "math-insert \chi"
-\bind "C-g d"              "math-insert \delta"
-\bind "C-g e"              "math-insert \varepsilon"
-\bind "C-g f"              "math-insert \phi"
-\bind "C-g g"              "math-insert \gamma"
-\bind "C-g h"              "math-insert \eta"
-\bind "C-g i"              "math-insert \iota"
-\bind "C-g j"              "math-insert \varphi"
-\bind "C-g k"              "math-insert \kappa"
-\bind "C-g l"              "math-insert \lambda"
-\bind "C-g m"              "math-insert \mu"
-\bind "C-g n"              "math-insert \nu"
-\bind "C-g o"              "math-insert \omega"
-\bind "C-g p"              "math-insert \pi"
-\bind "C-g q"              "math-insert \vartheta"
-\bind "C-g r"              "math-insert \rho"
-\bind "C-g s"              "math-insert \sigma"
-\bind "C-g t"              "math-insert \tau"
-\bind "C-g u"              "math-insert \upsilon"
-\bind "C-g v"              "math-insert \theta"
-\bind "C-g w"              "math-insert \omega"
-\bind "C-g x"              "math-insert \xi"
-\bind "C-g y"              "math-insert \psi"
-\bind "C-g z"              "math-insert \zeta"
+\bind "A-a"              "math-insert \alpha"
+\bind "A-b"              "math-insert \beta"
+\bind "A-c"              "math-insert \chi"
+\bind "A-d"              "math-insert \delta"
+\bind "A-e"              "math-insert \varepsilon"
+\bind "A-f"              "math-insert \phi"
+\bind "A-g"              "math-insert \gamma"
+\bind "A-h"              "math-insert \eta"
+\bind "A-i"              "math-insert \iota"
+\bind "A-j"              "math-insert \varphi"
+\bind "A-k"              "math-insert \kappa"
+\bind "A-l"              "math-insert \lambda"
+\bind "A-m"              "math-insert \mu"
+\bind "A-n"              "math-insert \nu"
+\bind "A-o"              "math-insert \omega"
+\bind "A-p"              "math-insert \pi"
+\bind "A-q"              "math-insert \vartheta"
+\bind "A-r"              "math-insert \rho"
+\bind "A-s"              "math-insert \sigma"
+\bind "A-t"              "math-insert \tau"
+\bind "A-u"              "math-insert \upsilon"
+\bind "A-v"              "math-insert \theta"
+\bind "A-w"              "math-insert \omega"
+\bind "A-x"              "math-insert \xi"
+\bind "A-y"              "math-insert \psi"
+\bind "A-z"              "math-insert \zeta"
 
-\bind "C-g S-D"            "math-insert \Delta"
-\bind "C-g S-E"            "math-insert \epsilon"
-\bind "C-g S-F"            "math-insert \Phi"
-\bind "C-g S-G"            "math-insert \Gamma"
-\bind "C-g S-I"            "math-insert \iota"
-\bind "C-g S-J"            "math-insert \epsilon"
-\bind "C-g S-L"            "math-insert \Lambda"
-\bind "C-g S-O"            "math-insert \Omega"
-\bind "C-g S-P"            "math-insert \Pi"
-\bind "C-g S-Q"            "math-insert \vartheta"
-\bind "C-g S-R"            "math-insert \varrho"
-\bind "C-g S-S"            "math-insert \Sigma"
-\bind "C-g S-T"            "math-insert \varsigma"
-\bind "C-g S-U"            "math-insert \Upsilon"
-\bind "C-g S-V"            "math-insert \Theta"
-\bind "C-g S-W"            "math-insert \Omega"
-\bind "C-g S-X"            "math-insert \Xi"
-\bind "C-g S-Y"            "math-insert \Psi"
+\bind "A-S-D"            "math-insert \Delta"
+\bind "A-S-E"            "math-insert \epsilon"
+\bind "A-S-F"            "math-insert \Phi"
+\bind "A-S-G"            "math-insert \Gamma"
+\bind "A-S-I"            "math-insert \iota"
+\bind "A-S-J"            "math-insert \epsilon"
+\bind "A-S-L"            "math-insert \Lambda"
+\bind "A-S-O"            "math-insert \Omega"
+\bind "A-S-P"            "math-insert \Pi"
+\bind "A-S-Q"            "math-insert \vartheta"
+\bind "A-S-R"            "math-insert \varrho"
+\bind "A-S-S"            "math-insert \Sigma"
+\bind "A-S-T"            "math-insert \varsigma"
+\bind "A-S-U"            "math-insert \Upsilon"
+\bind "A-S-V"            "math-insert \Theta"
+\bind "A-S-W"            "math-insert \Omega"
+\bind "A-S-X"            "math-insert \Xi"
+\bind "A-S-Y"            "math-insert \Psi"
 
 # Second: Math-symboles, basically start with C-s
 
 # arrows
-\bind "C-s 1"              "math-insert \rightarrow"
-\bind "C-s 2"              "math-insert \uparrow"
-\bind "C-s 3"              "math-insert \leftarrow"
-\bind "C-s 4"              "math-insert \downarrow"
-
-\bind "M-Right"            "math-insert \rightarrow"
-\bind "M-Up"               "math-insert \uparrow"
-\bind "M-Left"             "math-insert \leftarrow"
-\bind "M-Down"             "math-insert \downarrow"
 
 # thick arrows
-\bind "M-S-Right"          "math-insert \Rightarrow"
-\bind "M-S-Up"             "math-insert \Uparrow"
-\bind "M-S-Left"           "math-insert \Leftarrow"
-\bind "M-S-Down"           "math-insert \Downarrow"
+\bind "C-s minus"       "math-insert \Rightarrow"
 
 # Other arrows
-\bind "M-S C-equal"        "math-insert \Longleftrightarrow"
+\bind "C-s C-minum"        "math-insert \xrightarrow"
 
 # Contain, subset, superset, union etc.
 \bind "C-s 5"              "math-insert \supseteq"
@@ -131,53 +84,51 @@
 \bind "C-s S-asterisk"     "math-insert \bigcup"
 
 # less equal etc
-\bind "M-S less"           "math-insert \leqslant"
-\bind "M-S greater"        "math-insert \geqslant"
-\bind "M-S S-less"         "math-insert \ll"
-\bind "M-S S-greater"      "math-insert \gg"
-
-\bind "M-S asciicircum"    "math-insert \hat"
-\bind "M-S S-asciicircum"  "math-insert \widehat"
-
+\bind "C-s comma"            "math-insert \leqslant"
+\bind "C-s period"           "math-insert \geqslant"
+\bind "C-s S-less"         "math-insert \ll"
+\bind "C-s S-greater"      "math-insert \gg"
+ 
 # math accent
-\bind "M-S asciitilde"     "math-insert \tilde"
-\bind "M-S S-asciitilde"   "math-insert \widetilde"
-\bind "M-s grave"          "math-insert \grave"
-\bind "M-S-underscore"     "math-insert \overline"
-\bind "M-S-period"         "math-insert \dot"
+\bind "C-s asciitilde"     "math-insert \tilde"
+\bind "C-s S-asciitilde"     "math-insert \widetilde"
+
+\bind "C-s asciicircum"    "math-insert \hat"
+\bind "C-s S-asciicircum"    "math-insert \widehat"
+\bind "C-s underscore"     "math-insert \bar"
+\bind "C-s S-underscore"     "math-insert \overline"
+
 
 # one-side Delimits, VERY USEFUL!!
-\bind "M-S S-braceleft"    "math-delim { ."
-\bind "M-S S-braceright"   "math-delim . }"
-\bind "M-S bracketleft"    "math-delim [ ."
-\bind "M-S bracketright"   "math-delim . ]"
-\bind "M-S S-parenleft"    "math-delim ( ."
-\bind "M-S S-parenright"   "math-delim . )"
-\bind "M-S-parenleft M-bracketright"    "math-delim ( ]"
-\bind "M-bracketleft M-S-parenright"    "math-delim [ )"
-\bind "M-S-parenleft M-S-parenright"    "math-delim ( )"
-\bind "M-bracketleft M-S-braceright"    "math-delim [ }"
-\bind "M-bracketleft M-bracketright"    "math-delim [ ]"
-\bind "M-S-braceleft M-S-braceright"    "math-delim { }"
-
+\bind "C-s S-braceleft"    "math-delim { ."
+\bind "C-s S-braceright"   "math-delim . }"
+\bind "C-s bracketleft"    "math-delim [ ."
+\bind "C-s bracketright"   "math-delim . ]"
+\bind "C-s S-parenleft"    "math-delim ( ."
+\bind "C-s S-parenright"   "math-delim . )"
 
 # This is in sciword.bind,
 # in case you do not have sciword.bind, uncomment the following
+#\bind "C-9"                "math-delim ( )"
+#\bind "S-C-parenleft"      "math-delim ( )"
+#\bind "C-0"                "math-delim ( )"
+#\bind "S-C-parenright"     "math-delim ( )"
+#\bind "C-bracketleft"      "math-delim [ ]"
+#\bind "C-bracketright"     "math-delim [ ]"
+#\bind "C-S-less"           "math-delim langle rangle"
+#\bind "C-S-greater"        "math-delim langle rangle"
+#\bind "C-S-bar"            "math-delim | |"
+#\bind "C-S-brokenbar"      "math-delim | |"
+#\bind "C-M-bar"            "math-delim | |"
+#\bind "S-C-braceleft"      "math-delim { }"
+#\bind "S-C-braceright"     "math-delim { }""
+
 # very useful, must-haves
-\bind "M-S slash"            "math-insert \frac"
-\bind "M-s b"                "math-insert \binom"
+\bind "C-slash"            "math-insert \frac"
+
 
 # matrix and matrix elements
-# row add/delete
-#\bind "M-Insert"           "math-row-insert"
-#\bind "M-Delete"           "math-row-delete"
-# column add/delete
-#\bind "C-Insert"           "math-column-insert"
-#\bind "C-Delete"           "math-column-delete"
-# ... 
-\bind "C-s minus"          "math-insert \cdots"
-\bind "C-s semicolon"      "math-insert \vdots"
-\bind "C-s backslash"      "math-insert \ddots"
+
 # matrices
 \bind "C-s m"              "math-matrix 2 2 cll"
 \bind "C-s S-M"            "math-matrix 3 3 clll"
@@ -231,38 +182,30 @@
 \bind "C-s c"              "command-sequence math-insert \cases; break-line;"
 \bind "C-s S-C"            "command-sequence math-insert \cases; break-line; break-line;"
 \bind "C-s d"              "math-insert \partial"
-\bind "C-s S-D"            "math-insert \triangledown"
+#\bind "C-s S-D"            "math-insert \triangledown"
 \bind "C-s e"              "math-insert \exists"
 \bind "C-s S-E"            "math-insert \nexists"
 \bind "C-s f"              "math-insert \because"
 \bind "C-s S-F"            "math-insert \therefore"
-\bind "C-s g"              "graphics-insert"
-\bind "C-s S-G"            "graphics-insert"
-\bind "C-s h"              "math-insert \heartsuit"
+#\bind "C-s g"              "graphics-insert"
+#\bind "C-s S-G"            "graphics-insert"
+#\bind "C-s h"              "math-insert \heartsuit"
 \bind "C-s i"              "math-insert \infty"
 \bind "C-s S-I"            "math-insert \imath"
 \bind "C-s S-J"            "math-insert \jmath"
 \bind "C-s k"              "math-insert \cong"
 \bind "C-s l"              "math-insert \lim"
 \bind "C-s S-L"            "math-insert \ell"
-\bind "C-s n"              "math-insert \cap"
-\bind "C-s S-N"            "math-insert \bigcap"
-\bind "C-s o"              "math-insert \oint"
+#\bind "C-s n"              "math-insert \cap"
+#\bind "C-s S-N"            "math-insert \bigcap"
+#\bind "C-s o"              "math-insert \oint"
 \bind "C-s p"              "math-insert \prod"
 \bind "C-s S-P"            "math-insert \wp"
-\bind "C-s q"              "math-insert \nrightarrow"
-\bind "C-s r"              "math-insert \copyright"
+#\bind "C-s q"              "math-insert \nrightarrow"
+#\bind "C-s r"              "math-insert \copyright"
 \bind "C-s s"              "math-insert \stackrel"
 \bind "C-s S-S"            "math-insert \S"
-\bind "C-s S-R"            "math-insert \Re"
-\bind "C-s t"              "math-insert \triangle"
-\bind "C-s S-T"            "math-insert \bigtriangledown"
-\bind "C-s u"              "math-insert \cup"
-\bind "C-s S-U"            "math-insert \bigcup"
-\bind "C-s v"              "math-insert \vee"
-\bind "C-s S-V"            "math-insert \bigvee"
-\bind "C-s C-v"            "math-insert \wedge"
-\bind "C-s C-S-V"          "math-insert \bigwedge"
+\bind "C-s S-R"            "math-insert \R"
 \bind "C-s w"              "math-insert \in"
 \bind "C-s S-W"            "math-insert \notin"
 \bind "C-s x"              "math-insert \times"
@@ -272,28 +215,28 @@
 
 \bind "C-s S-colon"        "math-insert \mid"
 \bind "C-s S-asciitilde"   "math-insert \sim"
-#\bind "C-s t"              "dialog-tabular-insert"
-#\bind "C-s S-T"            "dialog-tabular-insert"
 
 \bind "C-s apostrophe"     "command-sequence math-superscript; math-insert \prime;"
 
-\bind "M-C-d"              "command-sequence math-mode; math-mutate align;"
-
 \bind "C-e"                "math-insert \sum"
-\bind "C-S-E"              "command-sequence math-insert \sum; math-subscript; self-insert i; self-insert =; self-insert 1; char-forward; math-superscript; math-insert n; char-forward;"
-\bind "C-S-T"              "command-sequence math-insert \sum; math-subscript; self-insert t; self-insert =; self-insert 1; char-forward; math-superscript; math-insert T; char-forward;"
+\bind "C-S-E"              "command-sequence math-insert \sum; math-subscript; self-insert i; self-insert =; self-insert 0; char-forward; math-superscript; math-insert n; char-forward;"
+
+
 
 \bind "C-s equal"          "math-insert \equiv"
 \bind "M-equal"            "math-insert \approx"
 \bind "M-minus"            "math-insert \sim"
-
+\bind "M-apostrophe"       "command-sequence math-superscrupt; math-insert \prime;"
 
 # third: a sequence of commands
-\bind "M-s M-x i"          "command-sequence self-insert X; math-subscript; self-insert i; char-forward;"
-\bind "M-s M-x t"          "command-sequence self-insert X; math-subscript; self-insert t; char-forward;"
+\bind "M-q x"              "command-sequence self-insert x; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert x; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert x; math-subscript; self-insert n; char-forward;"
+\bind "M-q S-X"            "command-sequence self-insert X; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert X; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert X; math-subscript; self-insert n; char-forward;"
+\bind "M-q y"              "command-sequence self-insert y; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert y; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert y; math-subscript; self-insert n; char-forward;"
+\bind "M-q S-Y"            "command-sequence self-insert Y; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert Y; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert Y; math-subscript; self-insert n; char-forward;"
+\bind "M-q a"              "command-sequence self-insert a; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert a; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert a; math-subscript; self-insert n; char-forward;"
+\bind "M-q S-A"            "command-sequence self-insert A; math-subscript; self-insert 1; char-forward; self-insert ,; self-insert A; math-subscript; math-insert 2; char-forward; self-insert ,; math-insert \ldots; self-insert ,; self-insert A; math-subscript; self-insert n; char-forward;"
 
-\bind "M-s M-Y i"          "command-sequence self-insert Y; math-subscript; self-insert i; char-forward;"
-\bind "M-s M-Y t"          "command-sequence self-insert Y; math-subscript; self-insert t; char-forward;"
+
 
 # maybe I have gone too far, but ... sub/super scripts!
 \bind "M-0"                "command-sequence math-subscript; self-insert 0; char-forward;"
@@ -307,9 +250,12 @@
 \bind "M-8"                "command-sequence math-subscript; self-insert 8; char-forward;"
 \bind "M-9"                "command-sequence math-subscript; self-insert 9; char-forward;"
 
+\bind "M-i"                "command-sequence math-subscript; self-insert i; char-forward;"
+\bind "M-t"                "command-sequence math-subscript; self-insert t; char-forward;"
+
+
 \bind "M-C-0"              "command-sequence math-superscript; self-insert 0; char-forward;"
 \bind "M-C-1"              "command-sequence math-superscript; self-insert 1; char-forward;"
-# 2 does not work. I found no reason for it. :-(
 \bind "M-C-2"              "command-sequence math-superscript; self-insert 2; char-forward;"
 \bind "M-C-3"              "command-sequence math-superscript; self-insert 3; char-forward;"
 \bind "M-C-4"              "command-sequence math-superscript; self-insert 4; char-forward;"
@@ -318,6 +264,10 @@
 \bind "M-C-7"              "command-sequence math-superscript; self-insert 7; char-forward;"
 \bind "M-C-8"              "command-sequence math-superscript; self-insert 8; char-forward;"
 \bind "M-C-9"              "command-sequence math-superscript; self-insert 9; char-forward;"
+
+\bind "M-n"                "math-number"
+\bind "S-M-N"              "math-nonumber"
+
 
 # Fourth: Other function keys. 
 \bind "C-l"                "math-subscript"
@@ -339,8 +289,6 @@
 \bind "M-S-M"              "command-sequence math-mode; math-mutate align;"
 \bind "C-S-D"              "command-sequence math-mode; math-mutate eqnarray;"
 \bind "S-space"            "math-mode"
-\bind "C-n"                "math-number"
-\bind "S-C-N"              "math-nonumber"
 \bind "C-r"                "dialog-show-new-inset ref"
 \binf "C-l"                "label-insert"
 \bind "F9"                 "buffer-view dvi"
@@ -437,7 +385,10 @@
 
 # text conversion macros
 # convert things into ERT.
-#\bind "M-t e"          "command-sequence word-select; cut; ert-insert; self-insert \; paste; self-insert {}; inset-toggle;"
+
 \bind "M-t e"          "command-sequence word-select; cut; ert-insert; paste; inset-toggle;"
 
 \bind "C-p S"          "command-sequence math-insert \sum; math-subscript; math-insert i=1; char-right; math-superscript; math-insert n; char-right"
+\bind "C-p X"          "command-sequence math-insert X; math-subscript; math-insert i; char-right;"
+\bind "C-p Y"          "command-sequence math-insert X; math-subscript; math-insert i; char-right;"
+
