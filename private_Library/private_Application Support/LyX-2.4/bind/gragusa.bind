@@ -15,6 +15,11 @@
 # 
 # added May, 2005, some menu items
 
+\bind "C-M-s"                        "buffer-write"
+\bind "C-f"                          "dialog-show findreplace"
+\bind "C-S-f"                        "dialog-show findreplaceadv"
+
+
 #
 # First: Greek, start with C-g
 \bind "A-a"              "math-insert \alpha"
