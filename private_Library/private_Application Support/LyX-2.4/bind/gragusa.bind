@@ -54,11 +54,9 @@
 # This is in sciword.bind,
 # in case you do not have sciword.bind, uncomment the following
 \bind "C-9"                "math-delim ( )"
-\bind "A-9"                "math-delim ( )"
 \bind "C-bracketleft"      "math-delim [ ]"
-\bind "A-bracketleft"      "math-delim [ ]"
-\bind "A-braceleft"        "math-delim { }"
-\bind "C-braceleft"        "math-delim { }""
+\bind "C-S-bracketleft"    "math-delim { }"
 
-# Second: Math-symboles, basically start with C-s
+
+
 
