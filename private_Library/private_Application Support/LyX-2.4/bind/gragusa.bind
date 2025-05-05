@@ -60,3 +60,9 @@
 
 
 
+\bind "M-s-asciitilde"     "math-insert \tilde"
+\bind "M-s-6"              "math-insert \hat"
+\bind "M-s-asciicircum"    "math-insert \widehat"
+\bind "M-s-minus"          "math-insert \bar"
+\bind "M-s-underscore"     "math-insert \overline"
+
