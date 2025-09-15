@@ -180,7 +180,7 @@ colorlinks=true]{hyperref}
 %% --------------------------------------------------------------
 %% Geometry & Spacing
 %% --------------------------------------------------------------
-\geometry{left=2.62cm,right=2.62cm,top=2.2cm,bottom=2.3cm}
+\geometry{left=2.62cm,right=2.62cm,top=2.2cm,bottom=2.2cm}
 %\spacing{1.4}
 \pagestyle{empty}
 
@@ -372,7 +372,7 @@ colorlinks=true]{hyperref}
 \newcommand{\sumg}{\sum_{g=1}^{G}}
 \newcommand{\sumin}{\sum_{i=1}^{n}}
 
-\renewcommand{\vec}{\mathrm{vec}}
+\renewcommand{\vect}{\mathrm{vec}}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
