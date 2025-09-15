@@ -180,7 +180,7 @@ colorlinks=true]{hyperref}
 %% --------------------------------------------------------------
 %% Geometry & Spacing
 %% --------------------------------------------------------------
-\geometry{left=2.62cm,right=2.62cm,top=2.2cm,bottom=2.2cm}
+\geometry{left=2.62cm,right=2.62cm,top=2.2cm,bottom=2.5cm}
 %\spacing{1.4}
 \pagestyle{plain}
 
