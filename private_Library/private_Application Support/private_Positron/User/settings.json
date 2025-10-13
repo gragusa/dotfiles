@@ -1,0 +1,194 @@
+{
+    "python.defaultInterpreterPath": "/Users/gragusa/.pyenv/versions/3.11.8/bin/python",
+    "accessibility.signalOptions.volume": 0,
+    "files.associations": {
+        "renv.lock": "json"
+    },
+
+  // --- Editor appearance ---
+  "editor.glyphMargin": true,
+  "editor.rulers": [88, 120],
+  "editor.fontSize": 14,
+  // --- Trim whitespace smartly ---
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "files.trimTrailingWhitespace": false
+  },
+  "[latex]": {
+    "editor.fontFamily": "DejaVu Sans Mono",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "400",
+    "editor.fontVariations": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 72,
+    "editor.indentSize": 2,
+    "files.trimTrailingWhitespace": false
+  },
+
+  // --- Editor ergonomics ---
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "all",
+  "editor.renderWhitespace": "boundary",
+  "editor.scrollbar.vertical": "visible",
+  "editor.scrollbar.horizontal": "visible",
+  "editor.scrollbar.verticalScrollbarSize": 10,
+  "editor.scrollbar.horizontalScrollbarSize": 10,
+  "editor.scrollbar.scrollByPage": true,
+  "editor.smoothScrolling": true,
+  "editor.mouseWheelScrollSensitivity": 1,
+  "editor.fastScrollSensitivity": 3,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorWidth": 2,
+  "editor.lineHeight": 22,
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": "'calt' on, 'zero', 'ss01', 'ss05', 'ss07'",
+  "editor.scrollBeyondLastLine": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.cursorSurroundingLines": 3,
+  "workbench.editor.openPositioning": "right",
+  "explorer.compactFolders": true,
+
+  // --- Search & watcher performance (tune to your repos) ---
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/.hg/**": true,
+    "**/.svn/**": true,
+    "**/node_modules/**": true,
+    "**/.venv/**": true,
+    "**/venv/**": true,
+    "**/.mypy_cache/**": true,
+    "**/.pytest_cache/**": true,
+    "**/__pycache__/**": true,
+    "**/_site/**": true,
+    "**/_freeze/**": true,
+    "**/.quarto/**": true,
+    "**/build/**": true,
+    "**/dist/**": true,
+    "**/out/**": true,
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.venv": true,
+    "**/venv": true,
+    "**/_site": true,
+    "**/_freeze": true,
+    "**/.quarto": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/out": true
+  },
+
+  // --- Git quality of life ---
+  "git.pruneOnFetch": true,
+  "git.fetchOnPull": true,
+  // "git.autostash": false,
+
+  // --- Python ---
+  "python.terminal.activateEnvironment": true,
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.analysis.typeCheckingMode": "basic",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+
+  // --- Julia ---
+  // Prefer a single formatter to avoid conflicts:
+  // If you use the official formatter:
+  // "julia.lint.run": "onSave",
+  // "julia.lint.call": true,
+  // "julia.lint.typeparam": true,
+
+  "[julia]": {
+    "editor.tabSize": 4,
+    "editor.indentSize": 4,
+    "editor.fontFamily": "JuliaMono",
+    "editor.fontLigatures": "'calt' on, 'zero', 'ss01', 'ss05', 'ss07'",
+    "editor.defaultFormatter": "julialang.language-julia"
+  },
+
+  // --- Quarto / Markdown ---
+  "quarto.render.renderOnSave": true,
+  //"quarto.preview.preferBrowser": true,
+  "markdown.preview.breaks": false,
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "markdown.extension.toc.updateOnSave": true, // requires "Markdown All in One"
+
+  // --- LaTeX Workshop ---
+  "latex-workshop.latex.outDir": "_paper",
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  //"latex-workshop.intellisense.triggers.latex": ["\\"],
+  // Keep build artifacts out of search/watch:
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/__MACOSX": true,
+    "**/_paper": true
+  },
+  // Use external viewer (Skim)
+  "latex-workshop.view.pdf.viewer": "external",
+  // Open & forward-search via Skim's displayline
+  "latex-workshop.view.pdf.external.viewer.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+  "latex-workshop.view.pdf.external.viewer.args": [
+    "-r",               // reuse existing window
+    "%LINE%",           // jump to current source line
+    "%PDF%",            // compiled PDF path
+    "%TEX%"             // source .tex path
+  ],
+  // Explicit forward-sync command (same as above, used by the extension)
+  "latex-workshop.view.pdf.external.synctex.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+  "latex-workshop.view.pdf.external.synctex.args": [
+    "-r",
+    "%LINE%",
+    "%PDF%",
+    "%TEX%"
+  ],
+
+  // --- R / radian on macOS ---
+  "r.alwaysUseActiveTerminal": true,
+  "r.bracketedPaste": true,
+  "r.rterm.mac": "/usr/local/bin/radian", // or your actual radian path
+  "r.sessionWatcher": true,
+
+  // --- Jupyter ---
+  "jupyter.askForKernelRestart": false,
+  "jupyter.interactiveWindow.creationMode": "perFile",
+  //"jupyter.sendSelectionToInteractiveWindow": true,
+  // "jupyter.textOutputLimit": 100000,
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+
+  "terminal.integrated.defaultLocation": "panel",
+
+  // Keep the panel docked at the bottom (can be "bottom" or "right")
+  "workbench.panel.defaultLocation": "bottom",
+
+  // Optional: don’t auto-maximize the panel when it opens
+  "workbench.panel.opensMaximized": "never",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+  "julia.symbolCacheDownload": true,
+  "julia.enableTelemetry": true,
+  "git.autofetch": true,
+  "github.copilot.enable": {
+    "*": true,
+    "quarto": false
+  },
+  "workbench.colorTheme": "Bearded Theme Aquarelle Hydrangea"
+
+
+
+}
