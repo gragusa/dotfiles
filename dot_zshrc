@@ -11,11 +11,11 @@ plugins=(
   git
   fzf
   vscode
-  #fzf-tab
   zsh-autosuggestions
   zsh-syntax-highlighting
   fast-syntax-highlighting
   zsh-autocomplete
+  fzf-tab
  )
 
 source $ZSH/oh-my-zsh.sh
