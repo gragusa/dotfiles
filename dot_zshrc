@@ -11,7 +11,7 @@ plugins=(
   git
   fzf
   vscode
-  zsh-autosuggestions
+  #zsh-autosuggestions
   zsh-syntax-highlighting
   fast-syntax-highlighting
   zsh-autocomplete
