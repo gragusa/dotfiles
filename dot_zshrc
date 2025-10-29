@@ -49,13 +49,14 @@ source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(fzf --zsh)
 
 # Preview file content using bat (https://github.com/sharkdp/bat)
-export FZF_CTRL_T_OPTS="
+export FZF_CTRL_T_OPTS='
   --walker-skip .git,node_modules,target,Library,Applications,Music,.julia,.vscode,Public
   --preview "if file --mime-type {} | grep -qF image/; then
     imgcat --width $FZF_PREVIEW_COLUMNS --height $FZF_PREVIEW_LINES {}
   else
     bat --theme=TwoDark --style=numbers --color=always --line-range :500 {}
   fi"
+  '
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
