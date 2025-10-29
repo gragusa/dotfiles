@@ -21,7 +21,8 @@ setopt PUSHD_SILENT
 # Use the up and down keys to navigate the history
 bindkey "\e[A" history-beginning-search-backward
 bindkey "\e[B" history-beginning-search-forward
-
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
 # Move to directories without cd
 setopt autocd
 
