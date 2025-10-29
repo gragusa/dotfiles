@@ -44,7 +44,7 @@ export EDITOR="code --wait"
 export ZSH="$HOME/.zsh"
 
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $ZSH/plugins/zsh-autosuggestions-master/zsh-autosuggestions.zsh
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 # Set up fzf key bindings and fuzzy completion
