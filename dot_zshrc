@@ -1,10 +1,15 @@
 # Enable persistent history
+HISTSIZE=5000
 HISTFILE=~/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
-
-setopt HIST_SAVE_NO_DUPS
-setopt INC_APPEND_HISTORY
+SAVEHIST=5000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # Configure the push directory stack (most people don't need this)
 setopt AUTO_PUSHD
@@ -12,7 +17,7 @@ setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_SILENT
 
 # Emacs keybindings
-bindkey -e
+# bindkey -e
 # Use the up and down keys to navigate the history
 bindkey "\e[A" history-beginning-search-backward
 bindkey "\e[B" history-beginning-search-forward
@@ -22,6 +27,7 @@ setopt autocd
 
 # Initialize completion
 autoload -U compinit; compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # The most important aliases ever (the only thing I borrowed from OMZ)
 alias l='ls -lah'
