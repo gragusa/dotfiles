@@ -36,6 +36,11 @@ alias ll='ls -lh'
 alias ls='ls -G'
 alias lsa='ls -lah'
 
+
+
+export EDITOR="code --wait"
+
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
@@ -44,6 +49,10 @@ eval "$(zoxide init zsh)"
 
 # Set up the Starship prompt
 eval "$(starship init zsh)"
+
+
+
+
 
 
 # # Path to your oh-my-zsh installation.
@@ -134,6 +143,7 @@ eval "$(starship init zsh)"
 
 
 # export EDITOR="code --wait"
+
 
 
 # export PYENV_ROOT="$HOME/.pyenv"
