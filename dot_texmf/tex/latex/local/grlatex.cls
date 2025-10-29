@@ -40,8 +40,6 @@
 \newcommand*\myfontsize{12pt}
 \newcommand*\mypagesize{a4paper}
 
-
-
 \DeclareOption{letter}{%
 	\renewcommand*\mypagesize{letter}
 }
@@ -149,13 +147,11 @@
 	\RequirePackage[authoryear,round]{natbib}
 }
 
-
-
 \RequirePackage{centernot}
 \RequirePackage{comment}
 \RequirePackage{datetime}
 \RequirePackage{enumerate}
-\RequirePackage[capposition=bottom]{floatrow}
+%\RequirePackage[capposition=bottom]{floatrow}
 \RequirePackage{graphicx}
 \RequirePackage{geometry}
 \RequirePackage[unicode=true,
@@ -180,7 +176,7 @@ colorlinks=true]{hyperref}
 %% --------------------------------------------------------------
 %% Geometry & Spacing
 %% --------------------------------------------------------------
-\geometry{left=2.62cm,right=2.62cm,top=2.2cm,bottom=2.5cm}
+\geometry{left=2.62cm,right=2.62cm,top=2.2cm,bottom=2.2cm}
 %\spacing{1.4}
 \pagestyle{plain}
 
@@ -320,24 +316,55 @@ colorlinks=true]{hyperref}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \DeclarePairedDelimiter{\card}{|}{|}
 
-% use \Set*{x\inX \given \frac{\sqrt{x}}{x^2+1} > 1 }
-\providecommand\given{}
-\DeclarePairedDelimiterX\Set[1]\{\}{\renewcommand\given{\SetSymbol[\delimsize]}#1}
-% \P{A} = P(A) - \P{A \given B}
-\let\P\relax
-\DeclarePairedDelimiterXPP\P[1]{\mathbb{P}}(){}{
-	\renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}#1}
-\DeclarePairedDelimiterXPP\E[1]{\mathbb{E}}(){}{\renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}#1}
-\DeclarePairedDelimiterXPP\proj[1]{\mathrm{proj}}(){}{#1}
-\DeclarePairedDelimiterXPP\projn[1]{\mathrm{proj}_{n}}(){}{#1}
+%% Expectation commands
 
-% variance
-\DeclarePairedDelimiterXPP{\var}[1]{\mathbb{V}\mathrm{ar}}(){}{#1}
-\DeclarePairedDelimiterXPP{\avar}[1]{\mathrm{a}\mathbb{V}\mathrm{ar}}(){}{#1}
-\DeclarePairedDelimiterXPP{\SD}[1]{\mathbb{S}\mathrm{D}}(){}{#1}
-% covariance
-\DeclarePairedDelimiterXPP{\cov}[1]{\mathbb{C}\mathrm{ov}}[]{}{#1}
-\DeclarePairedDelimiterXPP{\cor}[1]{\mathbb{C}\mathrm{o}}[]{}{#1}
+\DeclarePairedDelimiterXPP{\E}[1]{\mathbb{E}}{\lparen}{\rparen}{}{#1}
+\DeclarePairedDelimiterXPP{\Eb}[1]{\mathbb{E}}{\lbrack}{\rbrack}{}{#1}
+\DeclarePairedDelimiterXPP{\Ec}[1]{\mathbb{E}}\{\}{}{#1}
+\DeclarePairedDelimiterXPP{\Ea}[1]{\mathbb{E}}\lvert\rvert{}{#1}
+
+%% Variance commands
+\DeclarePairedDelimiterXPP{\var}[1]{\mathbb{V}\mathrm{ar}}\lparen\rparen{}{#1}
+\DeclarePairedDelimiterXPP{\varb}[1]{\mathbb{V}\mathrm{ar}}\lbrack\rbrack{}{#1}
+\DeclarePairedDelimiterXPP{\varc}[1]{\mathbb{V}\mathrm{ar}}\{\}{}{#1}
+
+%% Covariance commands
+\DeclarePairedDelimiterXPP{\cov}[1]{\mathbb{C}\mathrm{ov}}\lparen\rparen{}{#1}
+\DeclarePairedDelimiterXPP{\covb}[1]{\mathbb{C}\mathrm{ov}}\lbrack\rbrack{}{#1}
+\DeclarePairedDelimiterXPP{\covc}[1]{\mathbb{C}\mathrm{ov}}\{\}{}{#1}
+
+%% Correlation commands
+\DeclarePairedDelimiterXPP{\cor}[1]{\mathbb{C}\mathrm{or}}\lparen\rparen{}{#1}
+\DeclarePairedDelimiterXPP{\corb}[1]{\mathbb{C}\mathrm{or}}\lbrack\rbrack{}{#1}
+\DeclarePairedDelimiterXPP{\corc}[1]{\mathbb{C}\mathrm{or}}\{\}{}{#1}
+
+
+% just to make sure it exists
+\providecommand\given{}
+% can be useful to refer to this outside \Set
+\newcommand\SetSymbol[1][]{%
+\nonscript\:#1\vert
+\allowbreak
+\nonscript\:
+\mathopen{}}
+\DeclarePairedDelimiterX\Set[1]\{\}{%
+\renewcommand\given{\SetSymbol[\delimsize]}
+#1
+}
+
+%% Conditional expectation commands
+\DeclarePairedDelimiterXPP\CE[1]{\mathbb{E}}(){}{
+\renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
+#1}
+
+\DeclarePairedDelimiterXPP\CEb[1]{\mathbb{E}}\lbrack\rbrack{}{
+\renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
+#1}
+
+%% Conditional probability commands
+\DeclarePairedDelimiterXPP\Prob[1]{\mathbb{P}}(){}{
+\renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
+#1}
 
 %% argmax
 \newcommand{\argmin}{\operatornamewithlimits{arg\,min}}
@@ -499,10 +526,3 @@ colorlinks=true]{hyperref}
 
 
 \endinput
-
-
-
-
-
-
-
