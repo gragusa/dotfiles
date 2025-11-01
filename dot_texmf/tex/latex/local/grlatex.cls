@@ -268,6 +268,10 @@ colorlinks=true]{hyperref}
 \newtheorem{definition}{Definition}
 \newcommand{\definitionautorefname}{Definition}
 
+\theoremstyle{example}
+\newtheorem{example}{Definition}
+\newcommand{\definitionautorefname}{Example}
+
 \makeatletter
 \renewcommand{\p@subassumption}{\theass}% Counter prefix.
 \makeatother
