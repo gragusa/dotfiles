@@ -270,7 +270,7 @@ colorlinks=true]{hyperref}
 
 \theoremstyle{definition}
 \newtheorem{example}{Example}
-\newcommand{\definitionautorefname}{Example}
+\newcommand{\exampleautorefname}{Example}
 
 \makeatletter
 \renewcommand{\p@subassumption}{\theass}% Counter prefix.
