@@ -268,8 +268,8 @@ colorlinks=true]{hyperref}
 \newtheorem{definition}{Definition}
 \newcommand{\definitionautorefname}{Definition}
 
-\theoremstyle{example}
-\newtheorem{example}{Definition}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
 \newcommand{\definitionautorefname}{Example}
 
 \makeatletter
