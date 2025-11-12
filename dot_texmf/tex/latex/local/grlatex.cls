@@ -29,9 +29,13 @@
 		backref=true]{biblatex}
 	\input{bibliographystyle}
 }{%
-	% If bibengine=bibtex or any other value, load natbib
-	\RequirePackage[authoryear,round]{natbib}
-	\AtBeginDocument{\bibliographystyle{plainnat}}
+	\IfStrEq{\grlatex@bibengine}{none}{%
+		% If bibengine=none, don't load any bibliography package
+	}{%
+		% If bibengine=bibtex or any other value, load natbib
+		\RequirePackage[authoryear,round]{natbib}
+		\AtBeginDocument{\bibliographystyle{plainnat}}
+	}%
 }
 
 
@@ -116,7 +120,6 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 \RequirePackage[title]{appendix}
-\RequirePackage{bm}
 \RequirePackage{tabularray}
 \UseTblrLibrary{booktabs}
 \usepackage{caption}
@@ -374,12 +377,13 @@ colorlinks=true]{hyperref}
 \newcommand{\argmin}{\operatornamewithlimits{arg\,min}}
 \newcommand{\argmax}{\operatornamewithlimits{arg\,max}}
 %% Indicator function
-% \usepackage{unicode-math}
-
-% \DeclareMathAlphabet{\mathbbb{U}{bbold}{m}{n}}
-% \newcommand*{\1}{\mathbb{1}}
+% Load bbold package for blackboard bold font for indicator function
+\RequirePackage{bbold}
 \DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 \newcommand*{\1}{\mathbbold{1}}
+
+%% Load bm package after all math alphabets are declared to avoid conflicts
+\RequirePackage{bm}
 %% Mathop
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\Real}{\text{Re}}
