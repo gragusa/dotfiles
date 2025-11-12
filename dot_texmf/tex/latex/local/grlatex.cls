@@ -379,11 +379,11 @@ colorlinks=true]{hyperref}
 %% Indicator function
 % Load bbold package for blackboard bold font for indicator function
 \RequirePackage{bbold}
-\DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
+%\DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 \newcommand*{\1}{\mathbbold{1}}
 
 %% Load bm package after all math alphabets are declared to avoid conflicts
-\RequirePackage{bm}
+%\RequirePackage{bm}
 %% Mathop
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\Real}{\text{Re}}
