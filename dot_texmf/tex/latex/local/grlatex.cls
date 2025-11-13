@@ -129,26 +129,26 @@
 \captionsetup[table]{labelfont=sc}
 
 
-\newcommand{\setbiblatex}{
-	\RequirePackage[style=authoryear,
-		backend=biber,
-		giveninits=true,
-		natbib=true,
-		date=year,
-		uniquelist=false,
-		uniquename=init,
-		isbn=false,
-		maxcitenames=3,
-		dashed=false,
-		maxbibnames=999,
-		doi=true,
-		backref=true]{biblatex}
-	\AtBeginDocument{\input{bibliographystyle}}
-}
+% \newcommand{\setbiblatex}{
+% 	\RequirePackage[style=authoryear,
+% 		backend=biber,
+% 		giveninits=true,
+% 		natbib=true,
+% 		date=year,
+% 		uniquelist=false,
+% 		uniquename=init,
+% 		isbn=false,
+% 		maxcitenames=3,
+% 		dashed=false,
+% 		maxbibnames=999,
+% 		doi=true,
+% 		backref=true]{biblatex}
+% 	\AtBeginDocument{\input{bibliographystyle}}
+% }
 
-\newcommand{\setbibtex}{
-	\RequirePackage[authoryear,round]{natbib}
-}
+% \newcommand{\setbibtex}{
+% 	\RequirePackage[authoryear,round]{natbib}
+% }
 
 \RequirePackage{centernot}
 \RequirePackage{comment}
@@ -166,6 +166,7 @@ pdfborder={0 0 0},
 pdfborderstyle={},
 backref=false,
 colorlinks=true]{hyperref}
+
 \RequirePackage{cleveref}
 \RequirePackage{mathrsfs}
 \RequirePackage{mathtools}
@@ -299,18 +300,6 @@ colorlinks=true]{hyperref}
 %% --------------------------------------------------------------
 \mathtoolsset{centercolon}
 \mathtoolsset{showmanualtags}
-\setlength{\parindent}{1em}
-
-
-
-
-
-%% Item symbols
-\AtBeginDocument{
-	\def\labelitemi{\(\vartriangleright\)}
-	\def\labelitemii{\(\circ\)}
-}
-
 
 %% mathtools
 \DeclarePairedDelimiter{\paren}{\lparen}{\rparen}
@@ -368,6 +357,16 @@ colorlinks=true]{hyperref}
 \renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
 #1}
 
+%% Linear projectiojn
+\DeclarePairedDelimiterXPP\LP[1]{\mathbb{L}}(){}{
+\renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
+#1}
+
+\DeclarePairedDelimiterXPP\CEb[1]{\mathbb{L}}\lbrack\rbrack{}{
+\renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
+#1}
+
+
 %% Conditional probability commands
 \DeclarePairedDelimiterXPP\Prob[1]{\mathbb{P}}(){}{
 \renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
@@ -383,6 +382,8 @@ colorlinks=true]{hyperref}
 % %\DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 % \DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 % \newcommand*{\1}{\mathbbold{1}}
+
+
 
 %% Load bm package after all math alphabets are declared to avoid conflicts
 %\RequirePackage{bm}
