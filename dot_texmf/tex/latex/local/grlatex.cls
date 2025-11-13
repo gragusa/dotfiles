@@ -382,7 +382,7 @@ colorlinks=true]{hyperref}
 % %\DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 % \DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 % \newcommand*{\1}{\mathbbold{1}}
-
+\newcommand*{\boldone}{\text{\usefont{U}{bbold}{m}{n}1}}
 
 
 %% Load bm package after all math alphabets are declared to avoid conflicts
