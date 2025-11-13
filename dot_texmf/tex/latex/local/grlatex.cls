@@ -362,7 +362,7 @@ colorlinks=true]{hyperref}
 \renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
 #1}
 
-\DeclarePairedDelimiterXPP\CEb[1]{\mathbb{L}}\lbrack\rbrack{}{
+\DeclarePairedDelimiterXPP\LPb[1]{\mathbb{L}}\lbrack\rbrack{}{
 \renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
 #1}
 
