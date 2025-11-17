@@ -10,6 +10,7 @@
 
 \DeclareStringOption[black]{colorheadings}
 \DeclareStringOption[biblatex]{bibengine}
+\DeclareStringOption[true]{hyperref}
 \ProcessKeyvalOptions*
 
 \IfStrEq{\grlatex@bibengine}{biblatex}{%
@@ -202,6 +203,7 @@ colorlinks=true]{hyperref}
 %% --------------------------------------------------------------
 %% Hyperref
 %% --------------------------------------------------------------
+\IfStrEq{\grlatex@hyperref}{true}{%
 \hypersetup{pdftitle={ },
 	pdfauthor={Giuseppe Ragusa},
 	colorlinks,
@@ -210,7 +212,7 @@ colorlinks=true]{hyperref}
 	citecolor=twilightsky2,
 	filecolor=egyptianblue,
 	urlcolor=egyptianblue}
-
+}{}
 
 %% --------------------------------------------------------------
 %% Fonts
