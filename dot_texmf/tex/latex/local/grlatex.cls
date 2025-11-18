@@ -113,6 +113,29 @@
 }%
 
 %% --------------------------------------------------------------
+%% Hyperref
+%% --------------------------------------------------------------
+\IfStrEq{\grlatex@hyperref}{true}{%
+\RequirePackage[unicode=true,
+bookmarks=true,
+bookmarksnumbered=false,
+bookmarksopen=false,
+breaklinks=false,
+pdfborder={0 0 0},
+pdfborderstyle={},
+backref=false,
+colorlinks=true]{hyperref}
+\hypersetup{pdftitle={ },
+	pdfauthor={Giuseppe Ragusa},
+	colorlinks,
+	breaklinks,
+	linkcolor=egyptianblue,
+	citecolor=egyptianblue,
+	filecolor=egyptianblue,
+	urlcolor=egyptianblue}
+}{}
+
+%% --------------------------------------------------------------
 %% Packages
 %% --------------------------------------------------------------
 \usepackage[T1]{fontenc}
@@ -148,28 +171,6 @@
 \RequirePackage{threeparttablex}
 \RequirePackage{units}
 
-%% --------------------------------------------------------------
-%% Hyperref
-%% --------------------------------------------------------------
-\IfStrEq{\grlatex@hyperref}{true}{%
-\RequirePackage[unicode=true,
-bookmarks=true,
-bookmarksnumbered=false,
-bookmarksopen=false,
-breaklinks=false,
-pdfborder={0 0 0},
-pdfborderstyle={},
-backref=false,
-colorlinks=true]{hyperref}
-\hypersetup{pdftitle={ },
-	pdfauthor={Giuseppe Ragusa},
-	colorlinks,
-	breaklinks,
-	linkcolor=egyptianblue,
-	citecolor=egyptianblue,
-	filecolor=egyptianblue,
-	urlcolor=egyptianblue}
-}{}
 
 
 %% --------------------------------------------------------------
