@@ -130,27 +130,6 @@
 \captionsetup[table]{labelfont=sc}
 
 
-% \newcommand{\setbiblatex}{
-% 	\RequirePackage[style=authoryear,
-% 		backend=biber,
-% 		giveninits=true,
-% 		natbib=true,
-% 		date=year,
-% 		uniquelist=false,
-% 		uniquename=init,
-% 		isbn=false,
-% 		maxcitenames=3,
-% 		dashed=false,
-% 		maxbibnames=999,
-% 		doi=true,
-% 		backref=true]{biblatex}
-% 	\AtBeginDocument{\input{bibliographystyle}}
-% }
-
-% \newcommand{\setbibtex}{
-% 	\RequirePackage[authoryear,round]{natbib}
-% }
-
 \RequirePackage{centernot}
 \RequirePackage{comment}
 \RequirePackage{datetime}
@@ -158,15 +137,6 @@
 %\RequirePackage[capposition=bottom]{floatrow}
 \RequirePackage{graphicx}
 \RequirePackage{geometry}
-\RequirePackage[unicode=true,
-bookmarks=true,
-bookmarksnumbered=false,
-bookmarksopen=false,
-breaklinks=false,
-pdfborder={0 0 0},
-pdfborderstyle={},
-backref=false,
-colorlinks=true]{hyperref}
 
 \RequirePackage{cleveref}
 \RequirePackage{mathrsfs}
@@ -204,12 +174,21 @@ colorlinks=true]{hyperref}
 %% Hyperref
 %% --------------------------------------------------------------
 \IfStrEq{\grlatex@hyperref}{true}{%
+\RequirePackage[unicode=true,
+bookmarks=true,
+bookmarksnumbered=false,
+bookmarksopen=false,
+breaklinks=false,
+pdfborder={0 0 0},
+pdfborderstyle={},
+backref=false,
+colorlinks=true]{hyperref}
 \hypersetup{pdftitle={ },
 	pdfauthor={Giuseppe Ragusa},
 	colorlinks,
 	breaklinks,
-	linkcolor=twilightsky2,
-	citecolor=twilightsky2,
+	linkcolor=egyptianblue,
+	citecolor=egyptianblue,
 	filecolor=egyptianblue,
 	urlcolor=egyptianblue}
 }{}
@@ -315,7 +294,6 @@ colorlinks=true]{hyperref}
 \DeclarePairedDelimiter{\card}{|}{|}
 
 %% Expectation commands
-
 \DeclarePairedDelimiterXPP{\E}[1]{\mathbb{E}}{\lparen}{\rparen}{}{#1}
 \DeclarePairedDelimiterXPP{\Eb}[1]{\mathbb{E}}{\lbrack}{\rbrack}{}{#1}
 \DeclarePairedDelimiterXPP{\Ec}[1]{\mathbb{E}}\{\}{}{#1}
@@ -367,7 +345,6 @@ colorlinks=true]{hyperref}
 \DeclarePairedDelimiterXPP\LPb[1]{\mathbb{L}}\lbrack\rbrack{}{
 \renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}
 #1}
-
 
 %% Conditional probability commands
 \DeclarePairedDelimiterXPP\Prob[1]{\mathbb{P}}(){}{
