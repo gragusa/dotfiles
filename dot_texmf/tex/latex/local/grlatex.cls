@@ -149,28 +149,6 @@
 \RequirePackage{units}
 
 %% --------------------------------------------------------------
-%% Geometry & Spacing
-%% --------------------------------------------------------------
-\geometry{left=2.62cm,right=2.62cm,top=2.2cm,bottom=2.2cm}
-%\spacing{1.4}
-\pagestyle{plain}
-
-%% --------------------------------------------------------------
-%% Abstract
-%% --------------------------------------------------------------
-\renewenvironment{abstract}
-{\small
-	\begin{center}
-		\bfseries \abstractname\vspace{-.5em}\vspace{0pt}
-	\end{center}
-	\list{}{%
-		\setlength{\leftmargin}{5mm}%
-		\setlength{\rightmargin}{\leftmargin}%
-	}%
-	\item\relax}
-{\endlist}
-
-%% --------------------------------------------------------------
 %% Hyperref
 %% --------------------------------------------------------------
 \IfStrEq{\grlatex@hyperref}{true}{%
@@ -192,6 +170,30 @@ colorlinks=true]{hyperref}
 	filecolor=egyptianblue,
 	urlcolor=egyptianblue}
 }{}
+
+
+%% --------------------------------------------------------------
+%% Geometry & Spacing
+%% --------------------------------------------------------------
+\geometry{left=2.62cm,right=2.62cm,top=2.2cm,bottom=2.2cm}
+%\spacing{1.4}
+\pagestyle{plain}
+
+%% --------------------------------------------------------------
+%% Abstract
+%% --------------------------------------------------------------
+\renewenvironment{abstract}
+{\small
+	\begin{center}
+		\bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+	\end{center}
+	\list{}{%
+		\setlength{\leftmargin}{5mm}%
+		\setlength{\rightmargin}{\leftmargin}%
+	}%
+	\item\relax}
+{\endlist}
+
 
 %% --------------------------------------------------------------
 %% Fonts
