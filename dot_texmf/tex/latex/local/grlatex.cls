@@ -313,9 +313,6 @@ colorlinks=true]{hyperref}
 \DeclarePairedDelimiterXPP{\avarb}[1]{a\mathbb{V}\mathrm{ar}}{\lbrack}{\rbrack}{}{#1}
 \DeclarePairedDelimiterXPP{\avarc}[1]{a\mathbb{V}\mathrm{ar}}\{\}{}{#1}
 
-
-
-
 %% Covariance commands
 \DeclarePairedDelimiterXPP{\cov}[1]{\mathbb{C}\mathrm{ov}}\lparen\rparen{}{#1}
 \DeclarePairedDelimiterXPP{\covb}[1]{\mathbb{C}\mathrm{ov}}\lbrack\rbrack{}{#1}
