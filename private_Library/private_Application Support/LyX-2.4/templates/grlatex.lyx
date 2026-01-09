@@ -102,7 +102,7 @@ theorems-ams-extended-bytype
 \align block
 \begin_inset Branch macro
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \align block
@@ -273,6 +273,42 @@ Paired Delimiters
 \begin_inset FormulaMacro
 \newcommand{\Ea}[1]{}
 {\mathbb{E}\left|#1\right|}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+
+\lang english
+\begin_inset FormulaMacro
+\newcommand{\avar}[1]{}
+{a\mathbb{V}\mathrm{ar}\left(#1\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+
+\lang english
+\begin_inset FormulaMacro
+\newcommand{\avarb}[1]{}
+{a\mathbb{V}\mathrm{ar}\left[#1\right]}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+
+\lang english
+\begin_inset FormulaMacro
+\newcommand{\avarc}[1]{}
+{a\mathbb{V}\mathrm{ar}\left\{ #1\right\} }
 \end_inset
 
 
@@ -620,7 +656,7 @@ Math Operators
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\argmin}{}
-{\operatorname*{arg\,min}}
+{\mathrm{argmin}}
 \end_inset
 
 
@@ -632,7 +668,7 @@ Math Operators
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\argmax}{}
-{\operatorname*{arg\,max}}
+{\mathrm{argmax}}
 \end_inset
 
 
@@ -644,7 +680,7 @@ Math Operators
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\sign}{}
-{\operatorname{sign}}
+{\mathrm{sign}}
 \end_inset
 
 
@@ -656,7 +692,7 @@ Math Operators
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\Real}{}
-{\operatorname{Re}}
+{\mathrm{Re}}
 \end_inset
 
 
@@ -668,7 +704,7 @@ Math Operators
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\Imag}{}
-{\operatorname{Im}}
+{\mathrm{Im}}
 \end_inset
 
 
@@ -680,7 +716,7 @@ Math Operators
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\nil}{}
-{\operatorname{\textsc{nil}}}
+{\textsc{nil}}
 \end_inset
 
 
@@ -704,7 +740,7 @@ Math Operators
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\trace}{}
-{\operatorname{Tr}}
+{\mathrm{trace}}
 \end_inset
 
 
@@ -716,7 +752,7 @@ Math Operators
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\determinant}{}
-{\operatorname{det}}
+{\mathrm{det}}
 \end_inset
 
 
@@ -848,7 +884,7 @@ Special Symbols
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\indep}{}
-{\perp\!\!\!\perp}
+{\perp}
 \end_inset
 
 
@@ -860,7 +896,7 @@ Special Symbols
 \lang english
 \begin_inset FormulaMacro
 \newcommand{\nindep}{}
-{\not\perp\!\!\!\perp}
+{\not\perp}
 \end_inset
 
 
@@ -1725,21 +1761,8 @@ A paper
 Introduction
 \end_layout
 
-\begin_layout Definition
-The monna lisa smile.
- 
-\end_layout
+\begin_layout Standard
 
-\begin_layout Definition
-These are important thing to remember.
-\end_layout
-
-\begin_layout Lemma
-A interesting lemma is that 
-\begin_inset Formula $Y=Y$
-\end_inset
-
-.
 \end_layout
 
 \end_body
