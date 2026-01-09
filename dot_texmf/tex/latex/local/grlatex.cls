@@ -302,10 +302,19 @@ colorlinks=true]{hyperref}
 \DeclarePairedDelimiterXPP{\Ec}[1]{\mathbb{E}}\{\}{}{#1}
 \DeclarePairedDelimiterXPP{\Ea}[1]{\mathbb{E}}\lvert\rvert{}{#1}
 
+
 %% Variance commands
 \DeclarePairedDelimiterXPP{\var}[1]{\mathbb{V}\mathrm{ar}}\lparen\rparen{}{#1}
 \DeclarePairedDelimiterXPP{\varb}[1]{\mathbb{V}\mathrm{ar}}\lbrack\rbrack{}{#1}
 \DeclarePairedDelimiterXPP{\varc}[1]{\mathbb{V}\mathrm{ar}}\{\}{}{#1}
+
+%% Asymptotic variance
+\DeclarePairedDelimiterXPP{\avar}[1]{a\mathbb{V}\mathrm{ar}}{\lparen}{\rparen}{}{#1}
+\DeclarePairedDelimiterXPP{\avarb}[1]{a\mathbb{V}\mathrm{ar}}{\lbrack}{\rbrack}{}{#1}
+\DeclarePairedDelimiterXPP{\avarc}[1]{a\mathbb{V}\mathrm{ar}}\{\}{}{#1}
+
+
+
 
 %% Covariance commands
 \DeclarePairedDelimiterXPP{\cov}[1]{\mathbb{C}\mathrm{ov}}\lparen\rparen{}{#1}
