@@ -1,0 +1,592 @@
+{
+  // ==========================================================================
+  // SUPERSLIDES QUARTO EXTENSION - VS CODE SNIPPETS
+  // ==========================================================================
+  // Usage: Type the prefix and press Tab to insert the snippet
+  // ==========================================================================
+
+  // --------------------------------------------------------------------------
+  // COLUMNS
+  // --------------------------------------------------------------------------
+
+  "Two Column Layout": {
+    "prefix": "ss-columns",
+    "body": [
+      ":::: {.columns}",
+      "::: {.column width=\"${1:50}%\"}",
+      "$2",
+      ":::",
+      "",
+      "::: {.column width=\"${3:50}%\"}",
+      "$4",
+      ":::",
+      "::::"
+    ],
+    "description": "Basic two-column layout"
+  },
+  "Two Column with Background": {
+    "prefix": "ss-columns-bg",
+    "body": [
+      ":::: {.columns}",
+      "::: {.column width=\"${1:50}%\" bg=\"${2:#e8f4f8}\"}",
+      "$3",
+      ":::",
+      "",
+      "::: {.column width=\"${4:50}%\" bg=\"${5:#fff5e6}\"}",
+      "$6",
+      ":::",
+      "::::"
+    ],
+    "description": "Two-column layout with background colors"
+  },
+  "Two Column Full Height": {
+    "prefix": "ss-columns-fullheight",
+    "body": [
+      ":::: {.columns fullheight=\"true\"}",
+      "::: {.column width=\"${1:50}%\" bg=\"${2:#e8f4f8}\"}",
+      "$3",
+      ":::",
+      "",
+      "::: {.column width=\"${4:50}%\" bg=\"${5:#fff5e6}\"}",
+      "$6",
+      ":::",
+      "::::"
+    ],
+    "description": "Full-height columns with backgrounds extending to slide bottom"
+  },
+  "Column with All Options": {
+    "prefix": "ss-column-full",
+    "body": [
+      "::: {.column width=\"${1:50}%\" bg=\"${2:#e8f4f8}\" height=\"${3:12cm}\" align=${4|left,center,right|}}",
+      "$5",
+      ":::"
+    ],
+    "description": "Single column with all available options"
+  },
+  "Three Column Layout": {
+    "prefix": "ss-columns-3",
+    "body": [
+      ":::: {.columns}",
+      "::: {.column width=\"${1:33}%\"}",
+      "$2",
+      ":::",
+      "",
+      "::: {.column width=\"${3:34}%\"}",
+      "$4",
+      ":::",
+      "",
+      "::: {.column width=\"${5:33}%\"}",
+      "$6",
+      ":::",
+      "::::"
+    ],
+    "description": "Three-column layout"
+  },
+
+  // --------------------------------------------------------------------------
+  // BOXES
+  // --------------------------------------------------------------------------
+  "Simple Box": {
+    "prefix": "ss-simplebox",
+    "body": [
+      "::: {.simplebox}",
+      "## ${1:Title}",
+      "$2",
+      ":::"
+    ],
+    "description": "Simple information box with primary color styling"
+  },
+  "Warning Box": {
+    "prefix": "ss-warningbox",
+    "body": [
+      "::: {.warningbox}",
+      "### ${1:Warning}",
+      "$2",
+      ":::"
+    ],
+    "description": "Warning box with secondary color styling"
+  },
+
+  // --------------------------------------------------------------------------
+  // THEOREMS
+  // --------------------------------------------------------------------------
+  "Theorem": {
+    "prefix": "ss-theorem",
+    "body": [
+      "::: {#thm-${1:label}}",
+      "### ${2:Theorem Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Theorem environment (ref: @thm-label)"
+  },
+  "Lemma": {
+    "prefix": "ss-lemma",
+    "body": [
+      "::: {#lem-${1:label}}",
+      "### ${2:Lemma Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Lemma environment (ref: @lem-label)"
+  },
+  "Corollary": {
+    "prefix": "ss-corollary",
+    "body": [
+      "::: {#cor-${1:label}}",
+      "### ${2:Corollary Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Corollary environment (ref: @cor-label)"
+  },
+  "Proposition": {
+    "prefix": "ss-proposition",
+    "body": [
+      "::: {#prp-${1:label}}",
+      "### ${2:Proposition Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Proposition environment (ref: @prp-label)"
+  },
+  "Definition": {
+    "prefix": "ss-definition",
+    "body": [
+      "::: {#def-${1:label}}",
+      "### ${2:Definition Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Definition environment (ref: @def-label)"
+  },
+  "Example": {
+    "prefix": "ss-example",
+    "body": [
+      "::: {#exm-${1:label}}",
+      "### ${2:Example Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Example environment (ref: @exm-label)"
+  },
+  "Assumption": {
+    "prefix": "ss-assumption",
+    "body": [
+      "::: {#${1:label} .assumption}",
+      "### ${2:Assumption Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Assumption environment (ref: #ref(<label>))"
+  },
+  "Conjecture": {
+    "prefix": "ss-conjecture",
+    "body": [
+      "::: {#cnj-${1:label}}",
+      "### ${2:Conjecture Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Conjecture environment (ref: @cnj-label)"
+  },
+  "Exercise": {
+    "prefix": "ss-exercise",
+    "body": [
+      "::: {#exr-${1:label}}",
+      "### ${2:Exercise Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Exercise environment (ref: @exr-label)"
+  },
+  "Solution": {
+    "prefix": "ss-solution",
+    "body": [
+      "::: {#sol-${1:label}}",
+      "### ${2:Solution Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Solution environment (ref: @sol-label)"
+  },
+  "Remark": {
+    "prefix": "ss-remark",
+    "body": [
+      "::: {#rem-${1:label}}",
+      "### ${2:Remark Title}",
+      "$3",
+      ":::"
+    ],
+    "description": "Remark environment (ref: @rem-label)"
+  },
+
+  // --------------------------------------------------------------------------
+  // SHORTCODES
+  // --------------------------------------------------------------------------
+  "Vertical Space": {
+    "prefix": "ss-v",
+    "body": "{{< v ${1:-2em} >}}",
+    "description": "Add vertical spacing (negative moves up)"
+  },
+  "Button": {
+    "prefix": "ss-button",
+    "body": "{{< button \"${1:Button Text}\" url=\"${2:https://example.com}\" >}}",
+    "description": "Interactive button with optional link"
+  },
+  "Button (no link)": {
+    "prefix": "ss-button-nolink",
+    "body": "{{< button \"${1:Button Text}\" >}}",
+    "description": "Button without a link"
+  },
+  "QR Code": {
+    "prefix": "ss-qr",
+    "body": "{{< qr \"${1:https://example.com}\" width=\"${2:2cm}\" title=\"${3:Scan Me}\" >}}",
+    "description": "Generate QR code with optional title"
+  },
+  "QR Code (simple)": {
+    "prefix": "ss-qr-simple",
+    "body": "{{< qr \"${1:https://example.com}\" >}}",
+    "description": "Simple QR code"
+  },
+  "Pause": {
+    "prefix": "ss-pause",
+    "body": "{{< pause >}}",
+    "description": "Insert presentation pause"
+  },
+  "Pause (dots)": {
+    "prefix": "ss-dots",
+    "body": ". . .",
+    "description": "Pause using three dots"
+  },
+  "Appendix": {
+    "prefix": "ss-appendix",
+    "body": "{{< appendix >}}",
+    "description": "Mark start of appendix slides"
+  },
+  "Meanwhile": {
+    "prefix": "ss-meanwhile",
+    "body": "{{< meanwhile >}}",
+    "description": "Touying transition marker"
+  },
+
+  // --------------------------------------------------------------------------
+  // INCREMENTAL / ANIMATION
+  // --------------------------------------------------------------------------
+  "Incremental List": {
+    "prefix": "ss-incremental",
+    "body": [
+      "::: {.incremental}",
+      "- ${1:Item 1}",
+      "- ${2:Item 2}",
+      "- ${3:Item 3}",
+      ":::"
+    ],
+    "description": "List items appear one at a time"
+  },
+  "Only (visible on specific slides)": {
+    "prefix": "ss-only",
+    "body": [
+      "::: {.only}",
+      "$1",
+      ":::"
+    ],
+    "description": "Content visible only on specific slides"
+  },
+  "Uncover (progressive reveal)": {
+    "prefix": "ss-uncover",
+    "body": [
+      "::: {.uncover}",
+      "$1",
+      ":::"
+    ],
+    "description": "Content uncovered progressively"
+  },
+
+  // --------------------------------------------------------------------------
+  // FONT SIZE CLASSES
+  // --------------------------------------------------------------------------
+  "Tiny Text": {
+    "prefix": "ss-tiny",
+    "body": "[${1:text}]{.tiny}",
+    "description": "Tiny text (0.6em)"
+  },
+  "Small Text": {
+    "prefix": "ss-small",
+    "body": "[${1:text}]{.small}",
+    "description": "Small text (0.8em)"
+  },
+  "Smaller Text": {
+    "prefix": "ss-smaller",
+    "body": "[${1:text}]{.smaller}",
+    "description": "Smaller text (0.8em)"
+  },
+  "Large Text": {
+    "prefix": "ss-large",
+    "body": "[${1:text}]{.large}",
+    "description": "Large text (1.2em)"
+  },
+  "Larger Text": {
+    "prefix": "ss-larger",
+    "body": "[${1:text}]{.larger}",
+    "description": "Larger text (1.2em)"
+  },
+  "Huge Text": {
+    "prefix": "ss-huge",
+    "body": "[${1:text}]{.huge}",
+    "description": "Huge text (1.5em)"
+  },
+  "Tiny Block": {
+    "prefix": "ss-tiny-block",
+    "body": [
+      "::: {.tiny}",
+      "$1",
+      ":::"
+    ],
+    "description": "Block of tiny text"
+  },
+
+  // --------------------------------------------------------------------------
+  // TEXT FORMATTING
+  // --------------------------------------------------------------------------
+  "Alert Text": {
+    "prefix": "ss-alert",
+    "body": "[${1:text}]{.alert}",
+    "description": "Alert/highlight text"
+  },
+  "Strong Text": {
+    "prefix": "ss-strong",
+    "body": "[${1:text}]{.strong}",
+    "description": "Strong emphasis (secondary color)"
+  },
+  "Foreground Color": {
+    "prefix": "ss-fg",
+    "body": "[${1:text}]{.fg}",
+    "description": "Custom foreground color"
+  },
+  "Background Highlight": {
+    "prefix": "ss-bg",
+    "body": "[${1:text}]{.bg}",
+    "description": "Background highlight"
+  },
+
+  // --------------------------------------------------------------------------
+  // SLIDES
+  // --------------------------------------------------------------------------
+  "New Slide (Level 2)": {
+    "prefix": "ss-slide",
+    "body": [
+      "## ${1:Slide Title}",
+      "",
+      "$2"
+    ],
+    "description": "New slide with title"
+  },
+  "New Section (Level 1)": {
+    "prefix": "ss-section",
+    "body": [
+      "# ${1:Section Title}",
+      "",
+      "$2"
+    ],
+    "description": "New section slide"
+  },
+  "Slide without Title": {
+    "prefix": "ss-slide-notitle",
+    "body": [
+      "##",
+      "",
+      "$1"
+    ],
+    "description": "Slide without a title"
+  },
+  "Slide Subtitle": {
+    "prefix": "ss-subtitle",
+    "body": "### ${1:Subtitle}",
+    "description": "Slide subtitle (level 3 heading)"
+  },
+
+  // --------------------------------------------------------------------------
+  // CROSS-REFERENCES
+  // --------------------------------------------------------------------------
+  "Theorem Reference": {
+    "prefix": "ss-ref-thm",
+    "body": "@thm-${1:label}",
+    "description": "Reference a theorem"
+  },
+  "Lemma Reference": {
+    "prefix": "ss-ref-lem",
+    "body": "@lem-${1:label}",
+    "description": "Reference a lemma"
+  },
+  "Definition Reference": {
+    "prefix": "ss-ref-def",
+    "body": "@def-${1:label}",
+    "description": "Reference a definition"
+  },
+  "Assumption Reference (Typst)": {
+    "prefix": "ss-ref-assumption",
+    "body": "`#ref(<${1:label}>)`{=typst}",
+    "description": "Reference an assumption (raw Typst)"
+  },
+
+  // --------------------------------------------------------------------------
+  // YAML FRONTMATTER
+  // --------------------------------------------------------------------------
+  "Superslides YAML Header": {
+    "prefix": "ss-yaml",
+    "body": [
+      "---",
+      "title: \"${1:Presentation Title}\"",
+      "subtitle: \"${2:Subtitle}\"",
+      "authors:",
+      "  - name: \"${3:Author Name}\"",
+      "    affiliation: \"${4:Institution}\"",
+      "    email: \"${5:email@example.com}\"",
+      "date: \"${6:Date}\"",
+      "format:",
+      "  superslides-typst:",
+      "    fig-width: 9",
+      "    fig-height: 6",
+      "---",
+      "",
+      "$7"
+    ],
+    "description": "Complete Superslides YAML frontmatter"
+  },
+  "YAML Color Configuration": {
+    "prefix": "ss-yaml-colors",
+    "body": [
+      "text-color: \"${1:#040404}\"",
+      "primary-color: \"${2:#333399}\"",
+      "secondary-color: \"${3:#c8102e}\"",
+      "background-color: \"${4:#FFFFFF}\""
+    ],
+    "description": "Color configuration for YAML"
+  },
+  "YAML Typography": {
+    "prefix": "ss-yaml-typography",
+    "body": [
+      "font-size: ${1:20pt}",
+      "font-family-body: \"${2:Roboto}\"",
+      "font-family-heading: \"${3:Oswald}\"",
+      "font-color-heading: \"${4:#333399}\""
+    ],
+    "description": "Typography configuration for YAML"
+  },
+  "YAML Title Slide": {
+    "prefix": "ss-yaml-title",
+    "body": [
+      "logo-path: \"${1:logo.png}\"",
+      "qr-code-url: \"${2:https://example.com}\"",
+      "qr-code-title: \"${3:Scan Me}\"",
+      "date-updated: \"${4:January 1, 2025}\""
+    ],
+    "description": "Title slide configuration for YAML"
+  },
+  "YAML Theorem Configuration": {
+    "prefix": "ss-yaml-theorems",
+    "body": [
+      "theorem-package: \"ctheorems\"",
+      "theorem-lang: \"${1|en,it|}\"",
+      "theorem-numbering: ${2|true,false|}"
+    ],
+    "description": "Theorem system configuration for YAML"
+  },
+  "YAML Custom Color Variables": {
+    "prefix": "ss-yaml-bgvars",
+    "body": [
+      "primary-bg: \"${1:#e8f4f8}\"",
+      "secondary-bg: \"${2:#fff5e6}\""
+    ],
+    "description": "Custom background color variables for columns"
+  },
+
+  // --------------------------------------------------------------------------
+  // MATH
+  // --------------------------------------------------------------------------
+  "Display Math": {
+    "prefix": "ss-math",
+    "body": [
+      "$$",
+      "${1:equation}",
+      "$$"
+    ],
+    "description": "Display math block"
+  },
+  "Inline Math": {
+    "prefix": "ss-imath",
+    "body": "\\$${1:equation}\\$",
+    "description": "Inline math"
+  },
+
+  // --------------------------------------------------------------------------
+  // CODE BLOCKS
+  // --------------------------------------------------------------------------
+  "R Code Block": {
+    "prefix": "ss-r",
+    "body": [
+      "```{r}",
+      "$1",
+      "```"
+    ],
+    "description": "R code block"
+  },
+  "Python Code Block": {
+    "prefix": "ss-python",
+    "body": [
+      "```{python}",
+      "$1",
+      "```"
+    ],
+    "description": "Python code block"
+  },
+  "Julia Code Block": {
+    "prefix": "ss-julia",
+    "body": [
+      "```{julia}",
+      "$1",
+      "```"
+    ],
+    "description": "Julia code block"
+  },
+  "Code Block with Figure Options": {
+    "prefix": "ss-code-fig",
+    "body": [
+      "```{${1:r}}",
+      "#| fig-align: \"center\"",
+      "#| fig-width: ${2:9}",
+      "#| fig-height: ${3:6}",
+      "$4",
+      "```"
+    ],
+    "description": "Code block with figure options"
+  },
+
+  "Bold Y_{u}": {
+    "prefix": "bfY1",
+    "body": "\\mathbf{Y}_{t${1}}",
+    "description": "Bold Y_t"
+  },
+  "Bold X_{u}": {
+    "prefix": "bfY1",
+    "body": "\\mathbf{X}_{t${1}}",
+    "description": "Bold Y_t"
+  },
+  "Covariance": {
+    "prefix": "cov",
+    "body": "\\mathbb{C}\\mathrm{ov}(${1})",
+    "description": "Covariance operator"
+  },
+  "Variance": {
+    "prefix": "var",
+    "body": "\\mathbb{V}\\mathrm{ar}(${1})",
+    "description": "Variance operator"
+  },
+  "Expected value": {
+    "prefix": "ev",
+    "body": "\\mathbb{E}($1)",
+    "description": "Expected value operator"
+  },
+
+}
