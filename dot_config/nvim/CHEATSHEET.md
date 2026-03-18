@@ -19,16 +19,53 @@ Leader key: `<Space>`
 
 ## Navigation
 
+### Basic movement
 | Key | Mode | Action |
 |-----|------|--------|
 | `h/j/k/l` | N | Left / Down / Up / Right |
-| `w` / `b` | N | Next / previous word |
+| `gj` / `gk` | N | Move down/up by visual line (useful with soft-wrap) |
+
+### Word movement
+| Key | Mode | Action |
+|-----|------|--------|
+| `w` / `b` | N | Next / previous word start |
+| `e` | N | End of current/next word |
+| `W` / `B` / `E` | N | Same but space-delimited (ignores punctuation) |
+
+Any motion can be prefixed with a count: `5b` = back 5 words,
+`3w` = forward 3 words, `10j` = down 10 lines.
+
+### Line movement
+| Key | Mode | Action |
+|-----|------|--------|
 | `0` / `$` | N | Start / end of line |
+| `^` | N | First non-blank character |
+| `f{char}` | N | Jump to next `{char}` on line (`F` for backward) |
+| `t{char}` | N | Jump to just before next `{char}` (`T` for backward) |
+| `;` / `,` | N | Repeat last `f`/`t` forward / backward |
+
+### Screen & file movement
+| Key | Mode | Action |
+|-----|------|--------|
 | `gg` / `G` | N | Top / bottom of file |
-| `{` / `}` | N | Previous / next paragraph |
+| `{number}G` | N | Go to line number (e.g. `42G`) |
+| `{` / `}` | N | Previous / next blank line (paragraph) |
+| `%` | N | Jump to matching bracket `(){}[]` |
 | `<C-d>` / `<C-u>` | N | Scroll half-page down / up |
 | `<C-f>` / `<C-b>` | N | Scroll full page down / up |
-| `gj` / `gk` | N | Move down/up by visual line (useful with soft-wrap) |
+| `H` / `M` / `L` | N | Top / middle / bottom of visible screen |
+
+### Search
+| Key | Mode | Action |
+|-----|------|--------|
+| `/{pattern}` | N | Search forward (`n` next, `N` previous) |
+| `?{pattern}` | N | Search backward |
+| `*` / `#` | N | Search word under cursor forward / backward |
+
+### Flash (jump anywhere on screen)
+
+Press `s`, type 1-2 characters — all matches highlight and you
+press a label key to jump instantly. Fastest way to move anywhere visible.
 
 ## Editing
 
@@ -142,8 +179,9 @@ and terminal splits.
 
 | Key | Action |
 |-----|--------|
-| `<leader>qp` | Start Quarto preview (opens in browser) |
-| `<leader>qc` | Close Quarto preview |
+| `<leader>Qp` | Start Quarto preview (opens in browser) |
+| `<leader>Qc` | Close Quarto preview |
+| `<leader>Qf` | Format R code block under cursor (air) |
 | `<leader>rc` | Run current code cell |
 | `<leader>ra` | Run all cells above current |
 | `<leader>rA` | Run all cells in document |
