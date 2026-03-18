@@ -7,3 +7,20 @@ vim.keymap.set("n", "<leader>rc", "<cmd>QuartoSend<CR>", { desc = "Run current c
 
 -- Exit terminal mode with Esc (instead of <C-\><C-n>)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- Toggle soft-wrap on/off
+vim.keymap.set("n", "<leader>uw", function()
+  vim.wo.wrap = not vim.wo.wrap
+  vim.notify("Wrap: " .. (vim.wo.wrap and "ON" or "OFF"))
+end, { desc = "Toggle word wrap" })
+
+-- Quarto: close preview
+vim.keymap.set("n", "<leader>qc", function()
+  require("quarto").quartoClosePreview()
+end, { silent = true, noremap = true, desc = "Quarto close preview" })
+
+-- Quarto: run all cells above
+vim.keymap.set("n", "<leader>ra", "<cmd>QuartoSendAbove<CR>", { desc = "Run all cells above" })
+
+-- Quarto: run all cells
+vim.keymap.set("n", "<leader>rA", "<cmd>QuartoSendAll<CR>", { desc = "Run all cells" })
