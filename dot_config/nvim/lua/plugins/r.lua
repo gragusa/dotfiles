@@ -1,20 +1,17 @@
 return {
-  -- R code formatting via styler
+  -- R code formatting via air (https://github.com/posit-dev/air)
   {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        r = { "styler" },
-        rmd = { "styler" },
+        r = { "air" },
+        rmd = { "air" },
       },
       formatters = {
-        styler = {
-          command = "Rscript",
-          args = {
-            "-e",
-            "con <- file('stdin'); code <- readLines(con); close(con); styled <- styler::style_text(code); cat(styled, sep='\\n')",
-          },
-          stdin = true,
+        air = {
+          command = "air",
+          args = { "format", "$FILENAME" },
+          stdin = false,
         },
       },
     },

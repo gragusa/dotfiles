@@ -67,25 +67,29 @@ return {
         end
         if #code_lines == 0 then return end
 
-        -- Pick formatter command based on language
-        local cmd
-        if lang == "r" or lang == "R" then
-          cmd = { "Rscript", "-e",
-            "con <- file('stdin'); code <- readLines(con); close(con); styled <- styler::style_text(code); cat(styled, sep='\\n')" }
-        else
+        -- Format via temp file (air doesn't support stdin)
+        if lang ~= "r" and lang ~= "R" then
           vim.notify("No formatter configured for {" .. lang .. "}", vim.log.levels.INFO)
           return
         end
 
-        local input = table.concat(code_lines, "\n") .. "\n"
-        local result = vim.fn.system(cmd, input)
+        local tmpfile = vim.fn.tempname() .. ".R"
+        vim.fn.writefile(code_lines, tmpfile)
+        vim.fn.system({ "air", "format", tmpfile })
         if vim.v.shell_error ~= 0 then
-          vim.notify("Formatter failed: " .. result, vim.log.levels.ERROR)
+          vim.notify("air format failed", vim.log.levels.ERROR)
+          os.remove(tmpfile)
           return
         end
 
-        -- Replace the code block content
-        local new_lines = vim.split(result, "\n", { trimempty = true })
+        local new_lines = vim.fn.readfile(tmpfile)
+        os.remove(tmpfile)
+
+        -- Remove trailing empty lines from formatter output
+        while #new_lines > 0 and new_lines[#new_lines] == "" do
+          table.remove(new_lines)
+        end
+
         vim.api.nvim_buf_set_lines(bufnr, fence_start, fence_end - 1, false, new_lines)
         vim.notify("Formatted {" .. lang .. "} block", vim.log.levels.INFO)
       end, { desc = "Format current code block" })
