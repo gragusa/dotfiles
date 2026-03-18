@@ -14,11 +14,6 @@ vim.keymap.set("n", "<leader>uw", function()
   vim.notify("Wrap: " .. (vim.wo.wrap and "ON" or "OFF"))
 end, { desc = "Toggle word wrap" })
 
--- Quarto: close preview
-vim.keymap.set("n", "<leader>qc", function()
-  require("quarto").quartoClosePreview()
-end, { silent = true, noremap = true, desc = "Quarto close preview" })
-
 -- Quarto: run all cells above
 vim.keymap.set("n", "<leader>ra", "<cmd>QuartoSendAbove<CR>", { desc = "Run all cells above" })
 
