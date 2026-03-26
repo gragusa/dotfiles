@@ -64,7 +64,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export TEXMFHOME=~/.texmf
 
 export PARDISO_LIC_PATH=/Users/gragusa/.local/panua-pardiso-20240630-mac_arm64
-
+export JULIA_PKG_USE_CLI_GIT=true
 
 ## Set up pyenv
 eval "$(pyenv init --path)"
