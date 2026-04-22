@@ -39,7 +39,7 @@ alias lsa='ls -lah'
 
 
 
-export EDITOR="code --wait"
+export EDITOR="nvim"
 
 export ZSH="$HOME/.zsh"
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
