@@ -52,7 +52,7 @@ Any motion can be prefixed with a count: `5b` = back 5 words,
 | `{` / `}` | N | Previous / next blank line (paragraph) |
 | `%` | N | Jump to matching bracket `(){}[]` |
 | `<C-d>` / `<C-u>` | N | Scroll half-page down / up |
-| `<C-f>` / `<C-b>` | N | Scroll full page down / up |
+| `<C-b>` | N | Scroll full page up (`<C-d>` scrolls half a page down) |
 | `H` / `M` / `L` | N | Top / middle / bottom of visible screen |
 
 ### Search
@@ -61,6 +61,10 @@ Any motion can be prefixed with a count: `5b` = back 5 words,
 | `/{pattern}` | N | Search forward (`n` next, `N` previous) |
 | `?{pattern}` | N | Search backward |
 | `*` / `#` | N | Search word under cursor forward / backward |
+| `<C-f>` / `<leader>sb` | N | Search lines in the current buffer |
+| `<leader>/` / `<leader>sg` | N | Search text throughout the project |
+| `<leader>sw` | N/V | Search word or selection throughout the project |
+| `<leader>s.` | N | Resume the last picker |
 
 ### Flash (jump anywhere on screen)
 
@@ -87,16 +91,33 @@ press a label key to jump instantly. Fastest way to move anywhere visible.
 |-----|------|--------|
 | `u` | N | Undo last change |
 | `<C-r>` | N | Redo (undo the undo) |
+| `<C-z>` | N/I | Undo |
+| `<C-S-z>` | N/I | Redo, when supported by the terminal; otherwise Esc, Ctrl-r |
+| `<leader>su` | N | Browse undo history with a diff preview; Enter restores a state |
 | `U` | N | Undo all changes on current line |
 
 Undo in Neovim is tree-based: if you undo and then make a new edit,
 the old redo branch is preserved. Use `:earlier 5m` / `:later 5m` to
-travel through time, or install a plugin like `undotree` to visualize it.
+travel through time. `<leader>su` shows the history using the installed Snacks
+picker. History persists across restarts. Edits are grouped into undo steps;
+leaving Insert mode or typing punctuation creates a boundary.
 
 ## Multi-Cursor / Bulk Editing
 
-Neovim doesn't have built-in multi-cursor like VS Code, but achieves
-the same results with these techniques:
+The configuration uses multicursor.nvim, installed by Lazy on the next launch.
+These mappings work in Normal and Visual mode:
+
+| Key | Action |
+|-----|--------|
+| `<C-n>` / `<leader>mn` | Add a cursor at the next matching word or selection |
+| `<leader>ms` | Skip a match |
+| `<leader>ma` | Add cursors at all matching occurrences |
+| `<leader>mj` / `<leader>mk` | Add a cursor below / above |
+| `<leader>mc` | Clear extra cursors |
+| `<Esc>` in Normal mode | Clear extra cursors |
+
+Select occurrences with Ctrl-n, press `c`, type the replacement, then press
+Esc twice to finish. Ctrl-n still navigates completion in Insert mode.
 
 ### Visual Block Mode (the most common approach)
 1. `<C-v>` to enter visual block mode
@@ -124,7 +145,11 @@ the same results with these techniques:
 ### LazyVim grug-far (find & replace UI)
 | Key | Action |
 |-----|--------|
-| `<leader>sr` | Open search & replace panel |
+| `<leader>sr` | Replace in the current saved file |
+| `<leader>sR` | Replace throughout the project |
+
+Save first, fill in Search and Replace, inspect the results, then press Esc
+and `\r` (backslash, r) to apply. `g?` shows panel commands.
 
 ## Windows & Splits
 
@@ -141,11 +166,11 @@ the same results with these techniques:
 
 | Key | Action |
 |-----|--------|
-| `<leader><space>` | Find files (Telescope) |
+| `<leader><space>` | Find files (Snacks picker) |
 | `<leader>ff` | Find files |
-| `<leader>fg` | Live grep (search in files) |
+| `<leader>fg` | Find Git-tracked files |
 | `<leader>fb` | Find open buffers |
-| `<leader>e` | File explorer (neo-tree) |
+| `<leader>e` | File explorer (Snacks) |
 | `<leader>bb` | Switch buffer |
 | `<leader>bd` | Close buffer |
 | `[b` / `]b` | Previous / next buffer |
@@ -163,10 +188,10 @@ the same results with these techniques:
 | `<leader>tj` | N | Toggle Julia REPL (right split) |
 | `<leader>tp` | N | Toggle Python REPL (right split) |
 | `<C-\>` | N/T | Toggle generic terminal |
-| `<leader>ss` | N | Send current line to REPL |
-| `<leader>ss` | V | Send visual selection to REPL |
-| `<leader>sp` | N | Send paragraph to REPL |
-| `<leader>sb` | N | Send entire buffer to REPL |
+| `<leader>rl` | N | Send current line to REPL |
+| `<leader>rl` | V | Send visual selection to REPL |
+| `<leader>rp` | N | Send paragraph to REPL |
+| `<leader>rb` | N | Send entire buffer to REPL |
 | `<Esc>` | T | Exit terminal mode (back to normal) |
 
 **Tip**: After `<Esc>` in terminal mode, use `i` or `a` to type in
@@ -197,8 +222,8 @@ objects are configured.
 | `<leader>uw` | Toggle soft-wrap on/off |
 
 When wrap is ON, long lines display across multiple visual lines.
-Use `gj` / `gk` to move by visual line (instead of `j`/`k` which
-move by actual line).
+Uncounted `j` / `k` move by visual line in LazyVim. A count such as `3j`
+moves by actual lines. `gj` / `gk` explicitly move by visual line.
 
 Soft-wrap is **enabled by default** with word-boundary wrapping
 (`linebreak`) and preserved indentation (`breakindent`).
@@ -225,10 +250,12 @@ to discover commands you've forgotten.
 |--------|----------|
 | `<leader>f` | Find / files |
 | `<leader>g` | Git |
-| `<leader>s` | Search / send-to-REPL |
+| `<leader>s` | Search / replace |
+| `<leader>m` | Multiple cursors |
 | `<leader>b` | Buffers |
 | `<leader>c` | Code actions |
-| `<leader>q` | Quarto |
-| `<leader>r` | Run (cells) |
+| `<leader>q` | Quit / session |
+| `<leader>Q` | Quarto preview / formatting |
+| `<leader>r` | Run cells / send to REPL |
 | `<leader>t` | Terminal / REPL |
 | `<leader>u` | UI toggles |

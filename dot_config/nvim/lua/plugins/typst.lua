@@ -7,8 +7,8 @@ return {
       require("typst-preview").update()
     end,
     keys = {
-      { "<leader>tp", "<cmd>TypstPreview<cr>", desc = "Typst preview" },
-      { "<leader>ts", "<cmd>TypstPreviewStop<cr>", desc = "Typst preview stop" },
+      { "<leader>tp", "<cmd>TypstPreview<cr>", ft = "typst", desc = "Typst preview" },
+      { "<leader>ts", "<cmd>TypstPreviewStop<cr>", ft = "typst", desc = "Typst preview stop" },
     },
     opts = {},
   },

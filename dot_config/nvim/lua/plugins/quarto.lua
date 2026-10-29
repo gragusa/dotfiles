@@ -36,7 +36,9 @@ local function format_code_block()
   for i = fence_start + 1, fence_end - 1 do
     table.insert(code_lines, lines[i])
   end
-  if #code_lines == 0 then return end
+  if #code_lines == 0 then
+    return
+  end
 
   if lang ~= "r" and lang ~= "R" then
     vim.notify("No formatter configured for {" .. lang .. "}", vim.log.levels.INFO)
@@ -69,12 +71,25 @@ return {
     dependencies = {
       { "jmbuhr/otter.nvim", opts = {} },
       "nvim-treesitter/nvim-treesitter",
+      "jpalardy/vim-slime",
     },
     ft = { "quarto", "markdown" },
     keys = {
-      { "<leader>Qp", function() require("quarto").quartoPreview() end,      desc = "Quarto preview" },
-      { "<leader>Qc", function() require("quarto").quartoClosePreview() end, desc = "Quarto close preview" },
-      { "<leader>Qf", format_code_block,                                     desc = "Format code block (air)" },
+      {
+        "<leader>Qp",
+        function()
+          require("quarto").quartoPreview()
+        end,
+        desc = "Quarto preview",
+      },
+      {
+        "<leader>Qc",
+        function()
+          require("quarto").quartoClosePreview()
+        end,
+        desc = "Quarto close preview",
+      },
+      { "<leader>Qf", format_code_block, desc = "Format code block (air)" },
     },
     config = function()
       require("quarto").setup({

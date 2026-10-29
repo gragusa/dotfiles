@@ -1,4 +1,4 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
-
 vim.g.python3_host_prog = vim.fn.expand("~/.venv/nvim/bin/python")
+
+-- Set provider paths before plugins can request them.
+require("config.lazy")

@@ -2,6 +2,17 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Native undo is u; native redo is Ctrl-r. These aliases also work while typing.
+vim.keymap.set("n", "<C-z>", "u", { desc = "Undo" })
+vim.keymap.set("i", "<C-z>", "<C-g>u<C-o>u", { desc = "Undo" })
+vim.keymap.set("n", "<C-S-z>", "<C-r>", { desc = "Redo" })
+vim.keymap.set("i", "<C-S-z>", "<C-o><C-r>", { desc = "Redo" })
+
+-- Search mappings live under <leader>s; REPL mappings live under <leader>r.
+vim.keymap.set("n", "<C-f>", function()
+  Snacks.picker.lines()
+end, { desc = "Find in current buffer" })
+
 -- Quarto cell runner
 vim.keymap.set("n", "<leader>rc", "<cmd>QuartoSend<CR>", { desc = "Run current cell" })
 
