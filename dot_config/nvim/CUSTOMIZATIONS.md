@@ -57,9 +57,11 @@
 
 ### `julia.lua` — Julia support
 - **Julia treesitter** parser (auto-installed)
-- **Julia LSP** (`julials`) via nvim-lspconfig with LanguageServer.jl + SymbolServer.jl, linting enabled
-- Uses `@nvim-lsp` and excludes Julia from Mason's automatic setup, avoiding synchronous environment discovery
-- Project discovery runs in the server process; the project's path is passed to LanguageServerInstance
+- **Julia LSP** (`julials`) via nvim-lspconfig and LanguageServer.jl
+- Excludes Julia from Mason's automatic setup, avoiding synchronous environment discovery
+- `lua/julia-lsp/server.jl` prefers `@nvim-lsp`; on Julia 1.13+, an outdated installation is replaced by the compatible server bundled with the installed VS Code Julia extension
+- Uses the public `runserver()` API and discovers the edited project inside the server process
+- `NVIM_JULIA_LSP_PROJECT` explicitly selects a server environment; incompatible selections fail with an explanatory error
 - `queries/julia/textobjects.scm` splits expensive conditional patterns to reduce query compilation time
 
 ### `typst.lua` — Typst support

@@ -114,3 +114,19 @@ needed by a command, shortcut, or Quarto. Scrolling animations and automatic
 plugin update checks are disabled. Use `:Lazy check` to check for updates and
 `:Lazy profile` to inspect plugin loading. VimTeX still loads at startup to
 support inverse search.
+
+## Julia language server
+
+The launcher at `lua/julia-lsp/server.jl` uses the `@nvim-lsp` environment when
+it contains a compatible server. On Julia 1.13 and newer, it requires
+LanguageServer 6 or newer: the older SymbolServer dependency can fail during
+precompilation. If the dedicated environment is outdated, the launcher uses
+the compatible server bundled with an installed VS Code Julia extension.
+All discovery and server loading happen in the Julia process.
+The first launch builds server and indexing caches in the background; language
+features become available after that setup, while editing remains responsive.
+
+Set `NVIM_JULIA_LSP_PROJECT` to a project directory or named environment to
+choose the server environment explicitly. Missing or incompatible packages
+produce an error. The launcher uses LanguageServer's public `runserver()` API
+to select and analyze the edited project's environment.

@@ -8,24 +8,14 @@ return {
     opts = {
       servers = {
         julials = {
-          -- Use @nvim-lsp rather than Mason's julia-lsp wrapper.
+          -- Resolve a compatible server in Julia, off the editor thread.
           mason = false,
           cmd = {
             "julia",
             "--startup-file=no",
             "--history-file=no",
             "--project=@nvim-lsp",
-            "-e",
-            [[
-              using LanguageServer, SymbolServer
-              depot_path = get(ENV, "JULIA_DEPOT_PATH", "")
-              project_file = Base.current_project(pwd())
-              project_path = project_file === nothing ?
-                  dirname(Base.load_path_expand("@v#.#")) : dirname(project_file)
-              server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path)
-              server.runlinter = true
-              run(server)
-            ]],
+            vim.fn.stdpath("config") .. "/lua/julia-lsp/server.jl",
           },
           filetypes = { "julia" },
         },
