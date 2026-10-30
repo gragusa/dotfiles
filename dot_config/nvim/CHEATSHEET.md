@@ -1,6 +1,8 @@
 # Neovim Cheatsheet
 
 Leader key: `<Space>`
+Local leader: `\` (backslash), used by VimTeX. `<C-j>` means Ctrl-J;
+`<CR>` means Enter. Modes: N = Normal, I = Insert, V = Visual, S = Select.
 
 ## Basics
 
@@ -197,6 +199,102 @@ and `\r` (backslash, r) to apply. `g?` shows panel commands.
 **Tip**: After `<Esc>` in terminal mode, use `i` or `a` to type in
 the terminal again. Use `<C-h>` / `<C-l>` to jump between the editor
 and terminal splits.
+
+## LaTeX Workflow
+
+### Snippets
+
+LuaSnip and friendly-snippets provide LaTeX templates. In Insert mode, type
+the trigger exactly as shown, then press **Ctrl-L**. For example,
+`figure` followed by Ctrl-L inserts a figure with an image path, caption,
+and label. Type over each selected field, then press Tab to move on.
+
+| Trigger | Inserts |
+|---------|---------|
+| `BEQ` | `equation` environment |
+| `equation` | `equation` environment with an `eq:` label |
+| `BSEQ` | Unnumbered `equation*` environment |
+| `ali` / `BAL` | `align` environment |
+| `BSAL` | Unnumbered `align*` environment |
+| `figure` | Figure with `\includegraphics`, caption, and `fig:` label |
+| `BFI` | Figure shell with placement, caption, and label fields |
+| `table` | Table with caption, `tab:` label, and example cells |
+| `BTA` | Table with editable column specification, caption, and label |
+| `BIT` | `itemize` environment with the first item |
+| `BEN` | `enumerate` environment with the first item |
+| `begin` | Generic environment with matching begin/end names |
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<C-l>` | I/S | Expand a typed snippet trigger, or advance to its next field |
+| `<Tab>` | I/S | Next snippet field |
+| `<S-Tab>` | I/S | Previous snippet field |
+
+Snippet expansion is manual; snippets do not appear as automatic suggestions
+in LaTeX. `align` and starred equation environments require `amsmath`;
+`\includegraphics` requires `graphicx` in the document preamble.
+
+### Citations and cross-references
+
+Suggestions appear only inside citation keys and cross-reference labels,
+such as `\citep{...}`, `\ref{...}`, `\eqref{...}`, and `\cref{...}`.
+Ordinary prose has no suggestions. LaTeX commands and delimiters stay visible.
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<C-j>` | I | Open citation/reference completion manually |
+| `<C-n>` / `<C-p>` | I | Next / previous suggestion |
+| `<Down>` / `<Up>` | I | Next / previous suggestion |
+| `<CR>` | I | Accept the selected suggestion |
+| `<C-y>` | I | Select and accept a suggestion |
+| `<C-e>` | I | Cancel completion |
+| `gd` | N | Go to the definition of a label or citation via Texlab |
+| `<leader>K` | N | Open documentation for the LaTeX package under the cursor |
+
+Ctrl-J avoids the macOS shortcut on Ctrl-Space. Ctrl-J and Ctrl-L retain
+their window-navigation actions in Normal mode.
+
+### Build, PDF, and document tools
+
+The shortcuts below start with **backslash**, then `l`, then the final key:
+`\ll` means backslash, l, l. Saving also runs the configured Texlab
+`latexmk` build. VimTeX's continuous compiler is controlled separately.
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `\ll` | N | Start / stop VimTeX continuous compilation |
+| `\lS` | N | Compile once with VimTeX |
+| `\lk` / `\lK` | N | Stop this / all VimTeX compiler processes |
+| `\le` | N | Show compilation errors |
+| `\lo` | N | Show compiler output |
+| `\lv` | N | Open the PDF with the configured VimTeX viewer |
+| `\lt` / `\lT` | N | Open / toggle the table of contents |
+| `\li` | N | Show VimTeX project information |
+| `\lg` / `\lG` | N | Show this / all VimTeX compiler statuses |
+| `\la` | N | Open the VimTeX context menu |
+| `\lm` | N | List VimTeX's Insert-mode math shortcuts |
+| `\lc` | N | Remove auxiliary build files |
+| `\lC` | N | Full cleanup, including the generated PDF |
+
+### Environments, math, and navigation
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `cse` | N | Rename the surrounding environment (both begin/end) |
+| `dse` | N | Remove the surrounding environment's begin/end commands |
+| `tss` | N | Toggle the environment's star, e.g. `equation` / `equation*` |
+| `csc` / `dsc` | N | Change / remove the surrounding LaTeX command |
+| `tsd` | N/V | Toggle delimiter sizing such as `\left` / `\right` |
+| `]]` | I | Insert the matching closing delimiter or environment |
+| `%` | N/V | Jump between matching delimiters or begin/end commands |
+| `]]` / `[[` | N | Next / previous section start |
+| `]m` / `[m` | N | Next / previous environment start |
+| `ie` / `ae` | V or after an operator | Inside / around an environment |
+| `i$` / `a$` | V or after an operator | Inside / around a math zone |
+| `ic` / `ac` | V or after an operator | Inside / around a LaTeX command |
+
+For example, `vie` selects an environment's contents and `di$` deletes the
+contents of a math zone. `:help vimtex-default-mappings` lists more shortcuts.
 
 ## Quarto Workflow
 

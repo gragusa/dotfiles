@@ -19,6 +19,7 @@
 | `<C-f>` | Search lines in the current buffer |
 
 ### `autocmds.lua` — Autocommands
+- For **tex/plaintex** files: `conceallevel=0` keeps the complete TeX source visible at every cursor position
 - For **quarto/markdown** files: `conceallevel=0` (shows ` ``` ` fences instead of hiding them) and disables backtick auto-pairing
 
 ---
@@ -73,6 +74,10 @@
 - **conform.nvim** configured with **air** formatter for `.R` and `.Rmd` files
 
 ### `latex.lua` — LaTeX support
+- VimTeX syntax concealment disabled: commands, math delimiters, and citations stay visible
+- In **tex/plaintex** files, Blink offers only Texlab citation keys and cross-reference labels inside their arguments; word, snippet, path, and AI completion sources are excluded
+- **Ctrl-J** opens completion manually; citation/reference suggestions also appear automatically while typing their keys, with inline suggestions disabled in TeX
+- **Ctrl-L** expands a typed LuaSnip trigger or advances to its next field; **Tab** / **Shift-Tab** move between fields. LaTeX triggers and VimTeX shortcuts are listed in `CHEATSHEET.md`
 - **texlab** LSP with latexmk build-on-save and forward search via macOS `open`
 
 ---
